@@ -121,7 +121,7 @@ body.darkMode .button:hover {
     cursor: pointer;
   }
   .gif-cnt .fav-do {
-    background: url("/assets/icon-fav.svg") center no-repeat;
+    background: url("https://github.com/KarolEnciso/Gifos.github.io/blob/main/assets/icon-fav.svg") center no-repeat;
   }
   .gif-cnt .fav-do:hover {
     background: url("/assets/icon-fav-hover.svg") center no-repeat;
@@ -286,7 +286,7 @@ body.darkMode .gif-data {
 }
 
 .largegif-favs {
-  background: url("/assets/icon-fav.svg") center no-repeat;
+  background: url("https://github.com/KarolEnciso/Gifos.github.io/blob/main/assets/icon-fav.svg") center no-repeat;
 }
 
 .largegif-favs:hover {
