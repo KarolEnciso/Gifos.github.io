@@ -1020,31 +1020,31 @@ body.darkMode footer p {
     cursor: pointer;
   }
   .gif-cnt .fav-do {
-    background: url("../assets/icon-fav.svg") center no-repeat;
+    background: url("/assets/icon-fav.svg") center no-repeat;
   }
   .gif-cnt .fav-do:hover {
-    background: url("assets/icon-fav-hover.svg") center no-repeat;
+    background: url("/assets/icon-fav-hover.svg") center no-repeat;
   }
   .gif-cnt .fav-do:active {
-    background: url("assets/icon-fav-active.svg") center no-repeat;
+    background: url("/assets/icon-fav-active.svg") center no-repeat;
   }
   .gif-cnt .download-do {
-    background: url("assets/icon-download.svg") center no-repeat;
+    background: url("/assets/icon-download.svg") center no-repeat;
   }
   .gif-cnt .download-do:hover {
-    background: url("assets/icon-download-hover.svg") center no-repeat;
+    background: url("/assets/icon-download-hover.svg") center no-repeat;
   }
   .gif-cnt .enlarge-do {
-    background: url("assets/icon-max-normal.svg") center no-repeat;
+    background: url("/assets/icon-max-normal.svg") center no-repeat;
   }
   .gif-cnt .enlarge-do:hover {
-    background: url("assets/icon-max-hover.svg") center no-repeat;
+    background: url("/assets/icon-max-hover.svg") center no-repeat;
   }
   .gif-cnt .remove-do {
-    background: url("assets/icon-trash-normal.svg") center no-repeat;
+    background: url("/assets/icon-trash-normal.svg") center no-repeat;
   }
   .gif-cnt .remove-do:hover {
-    background: url("assets/icon-trash-hover.svg") center no-repeat;
+    background: url("/assets/icon-trash-hover.svg") center no-repeat;
   }
   .gif-cnt .gif-data {
     position: absolute;
@@ -1118,11 +1118,11 @@ body.darkMode .enlarged-gif {
   -ms-flex-item-align: end;
       align-self: flex-end;
   cursor: pointer;
-  background: url("assets/close.svg") center no-repeat;
+  background: url("/assets/close.svg") center no-repeat;
 }
 
 body.darkMode .close-btn {
-  background: url("assets/close-modo-noct.svg") center no-repeat;
+  background: url("/assets/close-modo-noct.svg") center no-repeat;
 }
 
 .gif-data {
@@ -1185,46 +1185,46 @@ body.darkMode .gif-data {
 }
 
 .largegif-favs {
-  background: url("../assets/icon-fav.svg") center no-repeat;
+  background: url("/assets/icon-fav.svg") center no-repeat;
 }
 
 .largegif-favs:hover {
-  background: url("assets/icon-fav-hover.svg") center no-repeat;
+  background: url("/assets/icon-fav-hover.svg") center no-repeat;
 }
 
 .largegif-favs:active {
-  background: url("assets/icon-fav-active.svg") center no-repeat;
+  background: url("/assets/icon-fav-active.svg") center no-repeat;
 }
 
 .largegif-download {
-  background: url("assets/icon-download.svg") center no-repeat;
+  background: url("/assets/icon-download.svg") center no-repeat;
 }
 
 .largegif-download:hover {
-  background: url("assets/icon-download-hover.svg") center no-repeat;
+  background: url("/assets/icon-download-hover.svg") center no-repeat;
 }
 
 .largegif-remove {
-  background: url("assets/icon-trash-normal.svg'") center no-repeat;
+  background: url("/assets/icon-trash-normal.svg'") center no-repeat;
 }
 
 .largegif-remove:hover {
-  background: url("assets/icon-trash-hover.svg") center no-repeat;
+  background: url("/assets/icon-trash-hover.svg") center no-repeat;
 }
 
 .cover-download {
-  background: url("assets/icon-download.svg") center no-repeat;
+  background: url("/assets/icon-download.svg") center no-repeat;
 }
 
 .cover-download:hover {
-  background: url("assets/icon-download-hover.svg") center no-repeat;
+  background: url("/assets/icon-download-hover.svg") center no-repeat;
 }
 
 .cover-link {
-  background: url("assets/icon-link-normal.svg") center no-repeat;
+  background: url("/assets/icon-link-normal.svg") center no-repeat;
 }
 
 .cover-link:hover {
-  background: url("assets/icon-link-hover.svg") center no-repeat;
+  background: url("/assets/icon-link-hover.svg") center no-repeat;
 }
 /*# sourceMappingURL=styles.css.map */
