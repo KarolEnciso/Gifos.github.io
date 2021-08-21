@@ -1,0 +1,234 @@
+.newgif-section { //ajustado
+	padding-top: 12%;
+	position: relative;
+
+	.newgif-cnt { //ajustado
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+
+	//Camara
+	.newgif-camera-cnt {//ajustado
+		max-width: 25%;
+		position: relative;
+
+		.camera-light {//ajustado
+			position: relative;
+			top: -1rem;
+		}
+	}
+	
+
+	// UI ---PENDIENTE
+	.overlay__buttons { //----PENDIENTE
+		width: 6.8rem;
+		padding: 2%;
+		position: absolute;
+		display: flex;
+		justify-content: space-between;
+		top: 0;
+		right: 0;
+
+		.btns { //----PENDIENTE
+			width: 2rem;
+			height: 2rem;
+			cursor: pointer;
+		}
+	}
+
+}
+
+//Grabación
+.newgif-record-cnt { //Ajustado
+	padding: 2rem;
+	width: 50%;
+	height: 20rem;
+	border: 1px solid $purple;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-content: center;
+	text-align: center;
+	align-items: center;
+	position: relative;
+
+	body.darkMode & {
+		border: 1px solid #fff;
+	}
+}
+
+.corner { //Ajustado
+	width: 1.7rem;
+	height: 1.7rem;
+	position: absolute;
+}
+
+.up-left { //Ajustado
+	border-top: 1px solid $aqua;
+	border-left: 1px solid $aqua;
+	top: 1.25rem;
+	left: 1.25rem;
+}
+.up-right { //Ajustado
+	border-top: 1px solid $aqua;
+	border-right: 1px solid $aqua;
+	top: 1.25rem;
+	right: 1.25rem;
+}
+
+.down-left { //Ajustado
+	border-bottom: 1px solid $aqua;
+	border-right: 1px solid $aqua;
+	bottom: 1.25rem;
+	right: 1.25rem;
+}
+.down-right { //Ajustado
+	border-bottom: 1px solid $aqua;
+	border-left: 1px solid $aqua;
+	bottom: 1.25rem;
+	left: 1.25rem;
+}
+
+.newgif-record-content { //Ajustado
+
+	.newgif-title { //Ajustado
+		font-family: $secondary-font;
+	}
+
+	.newgif-text { //Ajustado
+		padding-top: 10px;
+		color: black;
+
+		body.darkMode & {
+			color: #fff;
+		}
+	}
+}
+
+.newgif-video { //Ajustado
+	min-width: 80%;
+	min-height: 20rem;
+	max-width: 80%;
+	max-height: 20rem;
+	z-index: 3000;
+}
+
+.newgif-video-record { //Ajustado
+	width: 100%;
+	z-index: 3000;
+}
+
+.cover { //Ajustado 
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: $purpleTransparency;
+	color: #fff;
+	z-index: 90;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	.cover-cnt { //Ajustado 
+		display: flex;
+		flex-direction: column;
+	}
+
+	.cover-icon { //Ajustado 
+		margin: 0.8rem;
+	}
+	
+}
+
+.newgif-movie { //Ajustado
+	max-width: 25%;
+	height: 20rem;
+	padding-top: 18rem;
+	padding-left: 1.5rem;
+}
+
+//Pasos de grabación
+.steps-cnt { //Ajustado
+	margin: 0 auto;
+	width: 75%;
+	width: fit-content;
+	justify-self: flex-end;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	text-align: center;
+
+	.step { //Se dejó así
+		width: 2rem;
+		height: 2rem;
+		padding-top: 0.2em;
+		margin: 1.5rem 0.5rem 1.5rem 0.5rem;
+		border: 1px solid $purple;
+		border-radius: 50%;
+		font-size: 1.2em;
+
+		body.darkMode & {
+			border: 1px solid #fff;
+		}
+	}
+
+	.step-active { //----(ESTE SE ENCUENTRA PENDIENTE)
+		background-color: $purple;
+		color: #fff;
+	}
+}
+
+.counter-cnt { //AJustado
+	width: 25%;
+	text-align: right;
+	position: absolute;
+	top: 79%;
+	right: 24%;
+
+	.counter-text { //Ajustado
+		font-family: $secondary-font;
+		font-size: 16px;
+
+		line-height: 22px;
+	}
+}
+
+#counter-newshot { //Ajustado
+	color: $purple;
+	text-decoration: none;
+
+	&:hover {
+		border-bottom: 2px solid $aqua;
+	}
+
+	&:active {
+		color: $lightGray;
+		border-bottom: hidden;
+	}
+}
+
+.newgif-bottom-line { //ajustado
+	width: 58%;
+	margin: 0 auto;
+	border: 2px solid $purple;
+}
+
+
+//Vista desktop
+@media screen and (min-width: $desktop2) {
+	.newgif-section {
+		padding-top: 10%;
+	}
+}
+
+//Vista desktop generica
+@media screen and (min-width: $genericLaptop) {
+	.newgif-section {
+		padding-top: 9%;
+	}
+}

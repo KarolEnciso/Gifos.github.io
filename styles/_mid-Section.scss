@@ -1,0 +1,42 @@
+.mid-containers { //Ajustado
+	padding-top: 10%;
+	text-align: center;
+	font-family: $secondary-font;
+	font-weight: 500;
+}
+
+.mid-title { //Ajustado
+	margin-top: 0.5rem;
+	margin-bottom: 2.8rem;
+}
+
+.mid-gap-img { //Ajustado
+	margin-top: 3rem;
+	margin-bottom: 2rem;
+}
+.mid-gap-text { //Ajustado
+	padding: 0.5rem 0 3rem 0;
+	color: $aqua;
+	font-size: 16px;
+}
+
+//Vista mobile 
+@media screen and (min-width: $iphone) {
+	.containers {
+		padding-top: 20%;
+	}
+}
+
+//Vista desktop
+@media screen and (min-width: $desktop) {
+	.containers {
+		padding-top: 15%;
+	}
+}
+
+//Vista general 
+@media screen and (min-width: $genericLaptop) {
+	.mid-containers {
+		padding-top: 10%;
+	}
+}

@@ -1,0 +1,267 @@
+//Acciones de los gifs
+
+.gif-cnt { //ajustado
+	position: relative;
+
+	.gif-img { //ajustado
+		margin: 0.5rem;
+		width: 8rem;
+		height: 6rem;
+	}
+
+	.gif-doing { //Ajustado
+		display: none;
+	}
+
+	@media screen and (min-width: $iphone) {
+		.gif-img { //ajustado
+			margin: 1rem;
+			width: 10rem;
+			height: 8rem;
+		}
+	}
+
+	@media screen and (min-width: $tablet) {
+		.gif-img { //ajustado
+			width: 14rem;
+			height: 11rem;
+		}
+
+		.gif-doing { //AJustado
+			margin: 1rem;
+			display: block;
+			opacity: 0;
+			width: 14rem;
+			height: 11rem;
+			position: absolute;
+			top: 0;
+			background-color: $purpleTransparency;
+			transition: 0.2s ease-in-out;
+
+			&:hover {
+				opacity: 100;
+			}
+		}
+
+		.gif-doing-btn { //Ajustado
+			width: 8rem;
+			padding: 4%;
+			position: absolute;
+			display: flex;
+			justify-content: space-between;
+			right: 0;
+
+			.dobtn { //ajustado
+				width: 2rem;
+				height: 2rem;
+				cursor: pointer;
+			}
+		}
+
+		.fav-do { //ajustado
+			background: url('/assets/icon-fav.svg') center no-repeat;
+
+			&:hover {
+				background: url('/assets/icon-fav-hover.svg') center no-repeat;
+			}
+
+			&:active {
+				background: url('/assets/icon-fav-active.svg') center no-repeat;
+			}
+		}
+
+		.download-do { //ajustado
+			background: url('/assets/icon-download.svg') center no-repeat;
+
+			&:hover {
+				background: url('/assets/icon-download-hover.svg') center
+					no-repeat;
+			}
+		}
+
+		.enlarge-do { //Ajustado
+			background: url('/assets/icon-max-normal.svg') center no-repeat;
+
+			&:hover {
+				background: url('/assets/icon-max-hover.svg') center no-repeat;
+			}
+		}
+
+		.remove-do { //Ajustado
+			background: url('/assets/icon-trash-normal.svg') center no-repeat;
+
+			&:hover {
+				background: url('/assets/icon-trash-hover.svg') center no-repeat;
+			}
+		}
+
+		.gif-data { //Ajustado (revisar con el de abajo)
+			position: absolute;
+			left: 8%;
+			bottom: 15%;
+			font-weight: 500;
+			text-align: left;
+			color: #fff;
+		}
+	}
+
+	@media screen and (min-width: $desktop) {
+		.gif-img { //AJustado
+			width: 17rem;
+			height: 14rem;
+		}
+		.gif-doing { //ajustado
+			width: 17rem;
+			height: 14rem;
+		}
+	}
+
+	@media screen and (min-width: $genericLaptop) {
+		.gif-img { //Ajustado
+			width: 22rem;
+			height: 16rem;
+		}
+		.gif-doing { //ajustado
+			width: 22rem;
+			height: 16rem;
+		}
+	}
+}
+
+.enlarged-gif { //ajUSTADO
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	background: rgba(255, 255, 255, 0.9);
+	z-index: 2000;
+
+	body.darkMode & {
+		background-color: $backgroundDark;
+	}
+
+	.enlarge-gif-cnt { //ajustado
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+}
+
+.close-btn { //ok
+	width: 2rem;
+	padding-bottom: 3rem;
+	margin-right: 2rem;
+	align-self: flex-end;
+	cursor: pointer;
+	background: url('/assets/close.svg') center no-repeat;
+
+	body.darkMode & {
+		background: url('/assets/close-modo-noct.svg') center no-repeat;
+	}
+
+}
+
+.gif-data { //Ajustado (revisar con el de arriba)
+	color: black;
+	font-family: $secondary-font;
+	font-size: 14px;
+
+	@media screen and (min-width: $tablet) {
+		font-size: 16px;
+	}
+
+	body.darkMode & {
+		color: #fff;
+	}
+}
+
+.gif-data-title{ //Ajustado (Mirar si se puede ajustar esa letra)
+	font-weight: 500;
+
+}
+
+
+//Enlarge gif mid
+.large-gif{ //AJUSTADO
+	display: block;
+	max-width: 90%;
+	margin: 0 auto;
+}
+.enlarge-gifs-doing { //ajustado
+	width: 90%;
+	margin: 0 auto;
+	padding-top: 0.5rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.gif-btn-doing { //ajustadi
+	display: flex;
+}
+
+.largegif-btn-do { //ajustado
+	width: 1rem;
+	height: 1rem;
+	padding: 0.8rem;
+	margin: 2px;
+	cursor: pointer;
+
+	@media screen and (min-width: $tablet) {
+		width: 2rem;
+		height: 2rem;
+	}
+}
+
+
+.largegif-favs { //ajustado
+	background: url('/assets/icon-fav.svg') center no-repeat;
+
+	&:hover {
+		background: url('/assets/icon-fav-hover.svg') center no-repeat;
+	}
+
+	&:active {
+		background: url('/assets/icon-fav-active.svg') center no-repeat;
+	}
+}
+
+.largegif-download { //ajustado
+	background: url('/assets/icon-download.svg') center no-repeat;
+
+	&:hover {
+		background: url('/assets/icon-download-hover.svg') center no-repeat;
+	}
+}
+
+.largegif-remove { //ajustado
+	background: url('/assets/icon-trash-normal.svg') center no-repeat;
+
+	&:hover {
+		background: url('/assets/icon-trash-hover.svg') center no-repeat;
+	}
+}
+
+
+
+
+//Estilos new gif grabar
+
+.linkOverlay {
+	background: url('/assets/icon-link-normal.svg') center no-repeat;
+
+	&:hover {
+		background: url('/assets/icon-link-hover.svg') center no-repeat;
+	}	
+}
+
+.downloadOverlay {
+	background: url('/assets/icon-download.svg') center no-repeat;
+
+	&:hover {
+		background: url('/assets/icon-download-hover.svg') center
+			no-repeat;
+	}
+}

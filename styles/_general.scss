@@ -1,0 +1,58 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: $primary-font;
+	color: $purple;
+	transition: $transition;
+
+	&.darkMode {
+		background-color: $backgroundDark;
+		color: #fff;
+	}
+}
+
+.gifos-word { 
+	color: $aqua;
+}
+
+.button {
+	display: block;
+	width: fit-content;
+	margin: 1rem auto;
+	border: 1.8px solid $purple;
+	border-radius: 2rem;
+	padding: 1.2rem 1.3rem;
+	text-decoration: none;
+	font-family: $secondary-font;
+	text-align: center;
+	font-weight: 500;
+	font-size: 13px;
+	color: $purple;
+	cursor: pointer;
+
+	&:hover {
+		background-color: $purple;
+		color: #fff;
+	}
+
+	body.darkMode & {
+		border: 2px solid #fff;
+		color: #fff;
+
+		&:hover {
+			background-color: #fff;
+			color: #37383c;
+		}
+	}
+}
+
+.hidden {
+	display: none;
+}

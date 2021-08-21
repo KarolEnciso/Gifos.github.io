@@ -1,0 +1,123 @@
+//Trending words
+.trending-words-cnt { //Ajustado
+	font-family: $secondary-font;
+	font-size: 1.1em;
+	font-weight: 500;
+	padding: 6% 0 2% 0;
+
+	.trending-words-title { //Ajustado
+		padding-bottom: 2%;
+		font-size: 1em;
+	}
+
+	.trending-words-items { //Ajustado
+		font-weight: 400;
+	}
+
+	.trending-word-item { //Ajustado
+		cursor: pointer;
+
+		&:hover {
+			font-weight: 600;
+		}
+
+		&::after {
+			content: ',  ';
+		}
+
+		&:last-child::after {
+			content: ' ';
+		}
+	}
+}
+
+//Trending GIFS
+.trending-gifs-section { //Ajustado
+	padding: 15% 0 8% 0;
+	background-color: #f3f5f8;
+	text-align: center;
+
+	body.darkMode & {
+		background-color: $backgroundBlack;
+	}
+
+	.trending-gifs-title { //Ajustado
+		margin: 10px;
+		font-family: $secondary-font;
+		font-weight: 500;
+	}
+
+	.trending-gifs-text { //Ajustado
+		margin: 10px;
+		color: #000;
+
+		body.darkMode & {
+			color: #fff;
+		}
+	}
+}
+
+.trending-gifs-cnt { //Ajustado
+	max-width: 100%;
+	display: flex;
+	align-items: center;
+
+	.trending-showgif-cnt { //ajustado
+		overflow: hidden;
+	}
+
+	.trending-showgif-slider { //Ajustado
+		width: 100%;
+		display: flex;
+		overflow: scroll;
+	}
+
+	// .arrows { //Ajustado
+	// 	display: none;
+	// }
+
+	
+}
+	
+
+//Vista para mobile
+@media screen and (max-width: 500px) {
+	.arrows {
+		display: none;
+	}
+}
+
+
+//Vista para tablet
+@media screen and (min-width: $tablet) {
+
+	.trending-gifs-section{
+		padding: 12% 0 8% 0;
+	}
+
+	.arrows {
+		display: block;
+		padding: 1rem;
+		width: 10%;
+	}
+
+	.trending-showgif-slider{ //Ajustado
+		overflow: hidden;
+	}
+}
+
+//Vista para escritorio
+@media screen and (min-width: $desktop) {
+
+	.trending-gifs-section {
+		padding: 10% 0 8% 0;
+	}
+}
+
+//Vista para escritorio generico
+@media screen and (min-width: $genericLaptop) {
+
+	.trending-gifs-section {
+		padding: 8% 0 8% 0;
+	}
+}

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="./assets/ilustra_header.svg">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./styles/styles.css">
+	<title>GIFOS</title>
+</head>
+
+<body>
+	<!--Inicio del header que contiene el logo, barra de búsqueda del navbar y el menú-->
+	<header class="header-cnt" id="header-cnt">
+		<a id="logo-cnt" href="./index.html"><img class="logo-img" id="logo-img" src="./assets/logo-desktop.svg"
+				alt="Logo"></a>
+		<!--Barra de búsqueda de la navbar-->
+		<div class="navbar-search-cnt hiddenSearchBar" id="navbar-search-cnt">
+			<img class="navbar-search-btn hidden" id="navbar-search-btn" src="./assets/icon-search-gray.svg"
+				alt="Botón de búsqueda">
+			<input class="navbar-search-input" id="navbar-search-input" type="text" placeholder="Busca GIFOS y más">
+			<img class="navbar-search-icon" id="navbar-search-icon" src="./assets/icon-search.svg"
+				alt="Icono de búsqueda">
+			<img class="navbar-search-close hidden" id="navbar-search-close" src="./assets/close.svg"
+				alt="Icono de cierre">
+		</div>
+		<nav class="menu-cnt">
+			<img class="menu-burger" id="menu-burger" src="./assets/burger.svg" alt="Imágen del menú hamburguesa">
+			<ul class="menu-items hiddenMenu" id="menu-items">
+				<li class="navbar__list__item"><a href="#" class="menu-item" id="change-mode">Modo Nocturno</a></li>
+				<li class="separator"></li>
+				<li><a href="#" class="menu-item" id="Menu-favourites">Favoritos</a></li>
+				<li class="separator"></li>
+				<li><a href="#" class="menu-item" id="Menu-gifos">Mis GIFOS</a></li>
+				<li class="separator"></li>
+				<li class="navbar__list__item hiddenMenu"><a href="#" id="menu-newgif"><img id="menu-newgif-btn"
+							src="./assets/button-crear-gifo.svg" alt="Icono de crear nuevo gifo"></a></li>
+			</ul>
+		</nav>
+	</header>
+	<!--Fin del header-->
+
+	<!--Inicio de la sección del main-->
+	<main class="main-cnt" id="main-cnt">
+		<section class="central-section">
+			<h1 class="central-title">Inspírate, busca, guarda y crea <br>los mejores <span
+					class="gifos-word">GIFOS</span></h1>
+
+			<!--Barra de búsqueda del main-->
+			<div class="search-bar">
+				<img class="search-bar-img" src="./assets/ilustra_header.svg"
+					alt="Ilustración de amigos abrazandose y saludando">
+
+				<div class="search-cnt" id="search-cnt">
+					<img class="search-btn hidden" id="search-btn" src="./assets/icon-search-gray.svg"
+						alt="Lupa de búsqueda">
+					<input class="search-input" id="search-input" type="text" placeholder="Busca GIFOS y más">
+					<img class="search-icon" id="search-icon" src="./assets/icon-search.svg"
+						alt="Lupa de búsqueda morada">
+					<img class="search-close hidden" id="search-close" src="./assets/close.svg" alt="Icono de cierre">
+				</div>
+			</div>
+
+			<!--Sugerencias-->
+			<div class="suggest-cnt hidden" id="suggest-cnt">
+				<hr class="suggest-line">
+				<ul class="suggest-list" id="suggest-list"></ul>
+			</div>
+
+			<!--Trending words-->
+			<section class="trending-words-cnt">
+				<h4 class="trending-words-title">Trending:</h4>
+				<p class="trending-words-items" id="trending-words-items"></p>
+			</section>
+		</section>
+
+		<!--Outcome de las búsquedas-->
+		<section class="outcome-cnt hidden" id="outcome-cnt">
+			<hr class="outcome-line">
+			<h4 class="outcome-title" id="outcome-title">Búsqueda</h4>
+			<div id="no-outcome-cnt"></div>
+			<div class="outcome-card" id="outcome-card-cnt"></div>
+			<a href="#" class="button hidden" id="outcome-seemore-btn">VER MÁS</a>
+		</section>
+	</main>
+	<!--Fin de la sección del main-->
+
+	<div class="hidden" id="enlarge-gif-cnt"></div>
+
+	<!--Inicio de la mid-section-->
+	<!--Favoritos-->
+	<section class="mid-containers hidden" id="favs-cnt">
+		<img src="./assets/icon-favoritos.svg" alt="Imagen de corazón">
+		<h2 class="mid-title">Favoritos</h2>
+		<section class="empty__container hidden" id="favs-gap-cnt">
+			<img class="mid-gap-img" src="./assets/icon-fav-sin-contenido.svg" alt="Imagen de corazón grande">
+			<h3 class="mid-gap-text">"¡Guarda tu primer GIFO en Favoritos <br>para que se muestre aquí!"</h3>
+		</section>
+		<div class="outcome-cnt">
+			<div class="outcome-card hidden" id="fav-card-cnt"></div>
+		</div>
+	</section>
+	
+
+	<!--Mis gifos-->
+	<section class="mid-containers hidden" id="misgifos-cnt">
+		<img src="./assets/icon-mis-gifos.svg" alt="Imagen de carita feliz">
+		<h2 class="mid-title">Mis GIFOS</h2>
+		<section class="empty__container" id="misgifos-gap-cnt">
+			<img class="mid-gap-img" src="./assets/icon-mis-gifos-sin-contenido.svg"
+				alt="Imagen de carita feliz grande">
+			<h3 class="mid-gap-text">¡Anímate a crear tu primer GIFO!</h3>
+		</section>
+		<div class="outcome-cnt">
+			<div class="outcome-card" id="misgifos-card-cnt"></div>
+		</div>
+	</section>
+	<!--Fin de la mid-section-->
+
+	<!--Inicio de la sección de nuevos gifos-->
+	<div class="newgif-section hidden" id="newgif-section">
+		<div class="newgif-cnt">
+
+			<!--Camara-->
+			<div class="newgif-camera-cnt">
+				<img id="camera-img" src="./assets/camara.svg" alt="Imagen de camara">
+				<img class="camera-light" id="path" src="./assets/element-luz-camara.svg"
+					alt="Imagen de luz de la camara">
+			</div>
+
+			<!--Sección de grabación -->
+			<div class="newgif-record-cnt">
+				<div class="corner up-left"></div>
+				<div class="corner up-right"></div>
+				<div class="corner down-left"></div>
+				<div class="corner down-right"></div>
+
+				<div class="newgif-record-content">
+					<h3 class="newgif-title" id="newgif-title">Aquí podrás<br> crear tus propios <span
+							class="gifos-word">GIFOS</span></h3>
+					<p class="newgif-text" id="newgif-text">¡Crea tu GIFO en solo 3 pasos! <br> (solo necesitas una
+						cámara para grabar un video)</p>
+					<video class="newgif-video hidden" id="newgif-video"></video>
+					<img class="newgif-video-record hidden" id="newgif-video-record"></img>
+					<div class="cover" id="cover">
+						<div class="cover-cnt" id="cover-cnt">
+							<img class="cover-icon" id="cover-icon" src="./assets/loader.svg" alt="Icono de cargando">
+							<p class="cover-text" id="cover-text">Estamos subiendo tu GIFO</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="newgif-movie">
+				<img class="movie-img" id="movie-img" src="./assets/pelicula.svg" alt="Imágen de película">
+			</div>
+		</div>
+
+		<!--Pasos de grabación-->
+		<div class="steps-cnt">
+			<p class="step" id="step-one">1</p>
+			<p class="step" id="step-two">2</p>
+			<p class="step" id="step-three">3</p>
+		</div>
+		<div class="counter-cnt">
+			<p class="timer__recorder counter-text hidden" id="counter-time">00:00:00</p>
+			<a href="#" class="timer__repeatShot counter-text hidden" id="counter-newshot">REPETIR CAPTURA</a>
+		</div>
+		<hr class="newgif-bottom-line">
+
+		<!--Botones de grabación -->
+		<div class="button__container">
+			<a class="button" id="start-btn">COMENZAR</a>
+			<a class="button" id="record-btn">GRABAR</a>
+			<a class="button" id="end-btn">FINALIZAR</a>
+			<a class="button" id="upload-btn">SUBIR GIFO</a>
+		</div>
+	</div>
+	<!--Fin de la sección de nuevos gifos-->
+
+	<!--Inicio de la sección de los gifs en trending-->
+	<section class="trending-gifs-section" id="trending-gifs-section">
+		<h2 class="trending-gifs-title">Trending GIFOS</h2>
+		<p class="trending-gifs-text">Mira los últimos GIFO de nuestra comunidad</p>
+		<div class="trending-gifs-cnt">
+			<!--Slider-->
+			<div class="left-btn arrows">
+				<img id="left-btn" src="./assets/button-slider-left.svg" alt="Imagen de flecha izquierda">
+			</div>
+			<div class="trending-showgif-cnt">
+				<div class="trending-showgif-slider" id="trending-showgif-slider"></div>
+			</div>
+			<div class="right-btn arrows">
+				<img id="right-btn" src="./assets/Button-Slider-right.svg" alt="Imagen de flecha derecha">
+			</div>
+		</div>
+	</section>
+	<!--Fin de la sección de los gifs en trending-->
+
+	<!--Inicio de la sección del footer-->
+	<footer>
+		<h4>Compartir en:</h4>
+		<div class="icon-media">
+			<a href="https://www.facebook.com/" target="_blank"><img src="./assets/icon_facebook.svg"
+					alt="Icono de Facebook" id="facebook"></a>
+			<a href="https://twitter.com/?lang=es" target="_blank"><img src="./assets/icon-twitter.svg"
+					alt="Icono de Twitter" id="twitter"></a>
+			<a href="https://www.instagram.com/" target="_blank"><img src="./assets/icon_instagram.svg"
+					alt="Icono de Instagram" id="instagram"></a>
+		</div>
+		<p> &copy; GIFOS 2020 All Rights Reserved. </p>
+	</footer>
+	<!--Fin de la sección del footer-->
+
+
+	<script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+	<script src="./scripts/variables.js"></script> <!--OK-->
+	<script src="./scripts/api-endpoint.js"></script> <!--OK-->
+	<script src="./scripts/shift-mode.js"></script> <!--OK-->
+	<script src="./scripts/navbar.js"></script>
+	<script src="./scripts/gif-functions.js"></script>
+	<script src="./scripts/search.js"></script>
+	<script src="./scripts/trending.js"></script>
+	<script src="./scripts/create-gif.js"></script>
+	<script src="./scripts/footer.js"></script> <!--Pendiente hacer arreglos de estilo-->
+
+</body>
+
+</html>
