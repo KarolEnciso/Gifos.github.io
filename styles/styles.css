@@ -1020,13 +1020,13 @@ body.darkMode footer p {
     cursor: pointer;
   }
   .gif-cnt .fav-do {
-    background: url(https://github.com/KarolEnciso/Gifos.github.io/blob/main/assets/icon-fav.svg) center no-repeat;
+    background: url("assets/icon-fav.svg") center no-repeat;
   }
   .gif-cnt .fav-do:hover {
-    background: url(https://github.com/KarolEnciso/Gifos.github.io/blob/main/assets/icon-fav-hover.svg) center no-repeat;
+    background: url("assets/icon-fav-hover.svg") center no-repeat;
   }
   .gif-cnt .fav-do:active {
-    background: url(https://github.com/KarolEnciso/Gifos.github.io/blob/main/assets/icon-fav-active.svg) center no-repeat;
+    background: url("assets/icon-fav-active.svg") center no-repeat;
   }
   .gif-cnt .download-do {
     background: url(/assets/icon-download.svg) center no-repeat;

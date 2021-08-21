@@ -59,12 +59,12 @@
 		}
 
 		.fav-do { //ajustado
-			background: url(https://github.com/KarolEnciso/Gifos.github.io/blob/main/assets/icon-fav.svg) center no-repeat;
+			background: url("assets/icon-fav.svg") center no-repeat;
 			&:hover {
-				background: url(https://github.com/KarolEnciso/Gifos.github.io/blob/main/assets/icon-fav-hover.svg) center no-repeat;
+				background: url("assets/icon-fav-hover.svg") center no-repeat;
 			}
 			&:active {
-				background: url(https://github.com/KarolEnciso/Gifos.github.io/blob/main/assets/icon-fav-active.svg) center no-repeat;
+				background: url("assets/icon-fav-active.svg") center no-repeat;
 			}
 		}
 
