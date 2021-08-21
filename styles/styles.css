@@ -61,6 +61,274 @@ body.darkMode .button:hover {
   display: none;
 }
 
+.gif-cnt {
+  position: relative;
+}
+
+.gif-cnt .gif-img {
+  margin: 0.5rem;
+  width: 8rem;
+  height: 6rem;
+}
+
+.gif-cnt .gif-doing {
+  display: none;
+}
+
+@media screen and (min-width: 400px) {
+  .gif-cnt .gif-img {
+    margin: 1rem;
+    width: 10rem;
+    height: 8rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .gif-cnt .gif-img {
+    width: 14rem;
+    height: 11rem;
+  }
+  .gif-cnt .gif-doing {
+    margin: 1rem;
+    display: block;
+    opacity: 0;
+    width: 14rem;
+    height: 11rem;
+    position: absolute;
+    top: 0;
+    background-color: rgba(87, 46, 229, 0.6);
+    -webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+  }
+  .gif-cnt .gif-doing:hover {
+    opacity: 100;
+  }
+  .gif-cnt .gif-doing-btn {
+    width: 8rem;
+    padding: 4%;
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    right: 0;
+  }
+  .gif-cnt .gif-doing-btn .dobtn {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+  }
+  .gif-cnt .fav-do {
+    background: url("/assets/icon-fav.svg") center no-repeat;
+  }
+  .gif-cnt .fav-do:hover {
+    background: url("/assets/icon-fav-hover.svg") center no-repeat;
+  }
+  .gif-cnt .fav-do:active {
+    background: url("/assets/icon-fav-active.svg") center no-repeat;
+  }
+  .gif-cnt .download-do {
+    background: url("/assets/icon-download.svg") center no-repeat;
+  }
+  .gif-cnt .download-do:hover {
+    background: url("/assets/icon-download-hover.svg") center no-repeat;
+  }
+  .gif-cnt .enlarge-do {
+    background: url("/assets/icon-max-normal.svg") center no-repeat;
+  }
+  .gif-cnt .enlarge-do:hover {
+    background: url("/assets/icon-max-hover.svg") center no-repeat;
+  }
+  .gif-cnt .remove-do {
+    background: url("/assets/icon-trash-normal.svg") center no-repeat;
+  }
+  .gif-cnt .remove-do:hover {
+    background: url("/assets/icon-trash-hover.svg") center no-repeat;
+  }
+  .gif-cnt .gif-data {
+    position: absolute;
+    left: 8%;
+    bottom: 15%;
+    font-weight: 500;
+    text-align: left;
+    color: #fff;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .gif-cnt .gif-img {
+    width: 17rem;
+    height: 14rem;
+  }
+  .gif-cnt .gif-doing {
+    width: 17rem;
+    height: 14rem;
+  }
+}
+
+@media screen and (min-width: 1530px) {
+  .gif-cnt .gif-img {
+    width: 22rem;
+    height: 16rem;
+  }
+  .gif-cnt .gif-doing {
+    width: 22rem;
+    height: 16rem;
+  }
+}
+
+.enlarged-gif {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 2000;
+}
+
+body.darkMode .enlarged-gif {
+  background-color: #37383c;
+}
+
+.enlarged-gif .enlarge-gif-cnt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.close-btn {
+  width: 2rem;
+  padding-bottom: 3rem;
+  margin-right: 2rem;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  cursor: pointer;
+  background: url("/assets/close.svg") center no-repeat;
+}
+
+body.darkMode .close-btn {
+  background: url("/assets/close-modo-noct.svg") center no-repeat;
+}
+
+.gif-data {
+  color: black;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  .gif-data {
+    font-size: 16px;
+  }
+}
+
+body.darkMode .gif-data {
+  color: #fff;
+}
+
+.gif-data-title {
+  font-weight: 500;
+}
+
+.large-gif {
+  display: block;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.enlarge-gifs-doing {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.gif-btn-doing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.largegif-btn-do {
+  width: 1rem;
+  height: 1rem;
+  padding: 0.8rem;
+  margin: 2px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .largegif-btn-do {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.largegif-favs {
+  background: url("/assets/icon-fav.svg") center no-repeat;
+}
+
+.largegif-favs:hover {
+  background: url("/assets/icon-fav-hover.svg") center no-repeat;
+}
+
+.largegif-favs:active {
+  background: url("/assets/icon-fav-active.svg") center no-repeat;
+}
+
+.largegif-download {
+  background: url("/assets/icon-download.svg") center no-repeat;
+}
+
+.largegif-download:hover {
+  background: url("/assets/icon-download-hover.svg") center no-repeat;
+}
+
+.largegif-remove {
+  background: url("/assets/icon-trash-normal.svg") center no-repeat;
+}
+
+.largegif-remove:hover {
+  background: url("/assets/icon-trash-hover.svg") center no-repeat;
+}
+
+.cover-download {
+  background: url("/assets/icon-download.svg") center no-repeat;
+}
+
+.cover-download:hover {
+  background: url("/assets/icon-download-hover.svg") center no-repeat;
+}
+
+.cover-link {
+  background: url("/assets/icon-link-normal.svg") center no-repeat;
+}
+
+.cover-link:hover {
+  background: url("/assets/icon-link-hover.svg") center no-repeat;
+}
+
 .header-cnt {
   width: 100%;
   border-top: 5px solid #572ee5;
@@ -958,273 +1226,5 @@ body.darkMode footer p {
     -ms-flex-negative: 0;
         flex-shrink: 0;
   }
-}
-
-.gif-cnt {
-  position: relative;
-}
-
-.gif-cnt .gif-img {
-  margin: 0.5rem;
-  width: 8rem;
-  height: 6rem;
-}
-
-.gif-cnt .gif-doing {
-  display: none;
-}
-
-@media screen and (min-width: 400px) {
-  .gif-cnt .gif-img {
-    margin: 1rem;
-    width: 10rem;
-    height: 8rem;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .gif-cnt .gif-img {
-    width: 14rem;
-    height: 11rem;
-  }
-  .gif-cnt .gif-doing {
-    margin: 1rem;
-    display: block;
-    opacity: 0;
-    width: 14rem;
-    height: 11rem;
-    position: absolute;
-    top: 0;
-    background-color: rgba(87, 46, 229, 0.6);
-    -webkit-transition: 0.2s ease-in-out;
-    transition: 0.2s ease-in-out;
-  }
-  .gif-cnt .gif-doing:hover {
-    opacity: 100;
-  }
-  .gif-cnt .gif-doing-btn {
-    width: 8rem;
-    padding: 4%;
-    position: absolute;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    right: 0;
-  }
-  .gif-cnt .gif-doing-btn .dobtn {
-    width: 2rem;
-    height: 2rem;
-    cursor: pointer;
-  }
-  .gif-cnt .fav-do {
-    background: url("/assets/icon-fav.svg") center no-repeat;
-  }
-  .gif-cnt .fav-do:hover {
-    background: url("/assets/icon-fav-hover.svg") center no-repeat;
-  }
-  .gif-cnt .fav-do:active {
-    background: url("/assets/icon-fav-active.svg") center no-repeat;
-  }
-  .gif-cnt .download-do {
-    background: url("/assets/icon-download.svg") center no-repeat;
-  }
-  .gif-cnt .download-do:hover {
-    background: url("/assets/icon-download-hover.svg") center no-repeat;
-  }
-  .gif-cnt .enlarge-do {
-    background: url("/assets/icon-max-normal.svg") center no-repeat;
-  }
-  .gif-cnt .enlarge-do:hover {
-    background: url("/assets/icon-max-hover.svg") center no-repeat;
-  }
-  .gif-cnt .remove-do {
-    background: url("/assets/icon-trash-normal.svg") center no-repeat;
-  }
-  .gif-cnt .remove-do:hover {
-    background: url("/assets/icon-trash-hover.svg") center no-repeat;
-  }
-  .gif-cnt .gif-data {
-    position: absolute;
-    left: 8%;
-    bottom: 15%;
-    font-weight: 500;
-    text-align: left;
-    color: #fff;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .gif-cnt .gif-img {
-    width: 17rem;
-    height: 14rem;
-  }
-  .gif-cnt .gif-doing {
-    width: 17rem;
-    height: 14rem;
-  }
-}
-
-@media screen and (min-width: 1530px) {
-  .gif-cnt .gif-img {
-    width: 22rem;
-    height: 16rem;
-  }
-  .gif-cnt .gif-doing {
-    width: 22rem;
-    height: 16rem;
-  }
-}
-
-.enlarged-gif {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background: rgba(255, 255, 255, 0.9);
-  z-index: 2000;
-}
-
-body.darkMode .enlarged-gif {
-  background-color: #37383c;
-}
-
-.enlarged-gif .enlarge-gif-cnt {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.close-btn {
-  width: 2rem;
-  padding-bottom: 3rem;
-  margin-right: 2rem;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  cursor: pointer;
-  background: url("/assets/close.svg") center no-repeat;
-}
-
-body.darkMode .close-btn {
-  background: url("/assets/close-modo-noct.svg") center no-repeat;
-}
-
-.gif-data {
-  color: black;
-  font-family: "Montserrat", sans-serif;
-  font-size: 14px;
-}
-
-@media screen and (min-width: 768px) {
-  .gif-data {
-    font-size: 16px;
-  }
-}
-
-body.darkMode .gif-data {
-  color: #fff;
-}
-
-.gif-data-title {
-  font-weight: 500;
-}
-
-.large-gif {
-  display: block;
-  max-width: 90%;
-  margin: 0 auto;
-}
-
-.enlarge-gifs-doing {
-  width: 90%;
-  margin: 0 auto;
-  padding-top: 0.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.gif-btn-doing {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.largegif-btn-do {
-  width: 1rem;
-  height: 1rem;
-  padding: 0.8rem;
-  margin: 2px;
-  cursor: pointer;
-}
-
-@media screen and (min-width: 768px) {
-  .largegif-btn-do {
-    width: 2rem;
-    height: 2rem;
-  }
-}
-
-.largegif-favs {
-  background: url("/assets/icon-fav.svg") center no-repeat;
-}
-
-.largegif-favs:hover {
-  background: url("/assets/icon-fav-hover.svg") center no-repeat;
-}
-
-.largegif-favs:active {
-  background: url("/assets/icon-fav-active.svg") center no-repeat;
-}
-
-.largegif-download {
-  background: url("/assets/icon-download.svg") center no-repeat;
-}
-
-.largegif-download:hover {
-  background: url("/assets/icon-download-hover.svg") center no-repeat;
-}
-
-.largegif-remove {
-  background: url("/assets/icon-trash-normal.svg") center no-repeat;
-}
-
-.largegif-remove:hover {
-  background: url("/assets/icon-trash-hover.svg") center no-repeat;
-}
-
-.cover-download {
-  background: url("/assets/icon-download.svg") center no-repeat;
-}
-
-.cover-download:hover {
-  background: url("/assets/icon-download-hover.svg") center no-repeat;
-}
-
-.cover-link {
-  background: url("/assets/icon-link-normal.svg") center no-repeat;
-}
-
-.cover-link:hover {
-  background: url("/assets/icon-link-hover.svg") center no-repeat;
 }
 /*# sourceMappingURL=styles.css.map */
