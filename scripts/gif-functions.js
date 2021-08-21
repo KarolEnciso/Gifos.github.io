@@ -129,8 +129,8 @@ const showMisGifos = () => { //funtion
 //Funciones de los gifs
 //Download gif
 const downloadGif = async (url, title) => {
-	let gifdown = await fetch(url).then((img) => img.blob()); //variable
-	invokeSaveAsDialog(gifdown, title + '.gif'); //variable
+	let blob = await fetch(url).then((img) => img.blob()); //variable
+	invokeSaveAsDialog(blob, title + '.gif'); //variable
 };
 
 //Enlarge gif 
