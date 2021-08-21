@@ -37,7 +37,7 @@ const changeArrows = () => { //funtion
 		rightBtn.src = "./assets/button-slider-right-md-noct.svg"; //Ajustado
 	} else {
 		leftBtn.src = "./assets/button-slider-left.svg";//Ajustado
-		rightBtn.src = "./assets/Button-slider-right.svg"; //Ajustado
+		rightBtn.src = "./assets/Button-Slider-right.svg"; //Ajustado
 	}
 };
 
