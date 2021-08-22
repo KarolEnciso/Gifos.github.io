@@ -1,47 +1,47 @@
 //Poner en favoritos
-let favsGifs = [];//variable
-const addFavsGif = (gif, username, title) => { //funtion
-	let gifObject = { //object
+let favsGifs = [];
+const addFavsGif = (gif, username, title) => {
+	let gifObject = {
 		username: username,
 		title: title,
 		gif: gif
 	};
 
-	favsGifs.push(gifObject); //variable //object
-	localStorage.setItem('favs-gifs', JSON.stringify(favsGifs)); //variable //class
+	favsGifs.push(gifObject);
+	localStorage.setItem('favs-gifs', JSON.stringify(favsGifs));
 	showFavsGifs();
 };
 
 //Muestra el container de los favs gifs
-const showFavsCnt = () => { //funtion
-	mainCnt.classList.add("hidden");//ajustado
-	misGifosCnt.classList.add("hidden");//Ajustado
-	newGifSection.classList.add("hidden");//AJustado
-	favsCnt.classList.remove("hidden");//Ajustado
+const showFavsCnt = () => {
+	mainCnt.classList.add("hidden");
+	misGifosCnt.classList.add("hidden");
+	newGifSection.classList.add("hidden");
+	favsCnt.classList.remove("hidden");
 	window.scrollTo({ top: 0, behavior: "smooth" });
 	showFavsGifs();
 
-	if (favsGifs == 0 || favsGifs == null) { //variable
-		favsGapCnt.classList.remove("hidden"); //Ajustado
-		favsCardCnt.classList.add("hidden");//Ajustado
+	if (favsGifs == 0 || favsGifs == null) {
+		favsGapCnt.classList.remove("hidden");
+		favsCardCnt.classList.add("hidden");
 	} else {
-		favsGapCnt.classList.add("hidden");//Ajustado
-		favsCardCnt.classList.remove("hidden");//Ajustado
+		favsGapCnt.classList.add("hidden");
+		favsCardCnt.classList.remove("hidden");
 	}
 };
 
 
 //Muestra los favs gifs 
-const showFavsGifs = () => { //funtion
-	favsCardCnt.innerHTML = '';//Ajustado
-	favsGifs = JSON.parse(localStorage.getItem('favs-gifs')); //variable //class
+const showFavsGifs = () => {
+	favsCardCnt.innerHTML = '';
+	favsGifs = JSON.parse(localStorage.getItem('favs-gifs'));
 
-	if (favsGifs == null) { //variable
-		favsGifs = []; //variable
+	if (favsGifs == null) {
+		favsGifs = [];
 	} else {
-		for (let i = 0; i < favsGifs.length; i++) { //variable
-			const gifCnt = document.createElement('div'); //variable
-			gifCnt.classList.add('gif-cnt'); //variable
+		for (let i = 0; i < favsGifs.length; i++) {
+			const gifCnt = document.createElement('div');
+			gifCnt.classList.add('gif-cnt');
 			gifCnt.innerHTML = ` 
 			<img class="gif-img" onclick="enlargeFavGif('${favsGifs[i].gif}','${favsGifs[i].username}','${favsGifs[i].title}')" src="${favsGifs[i].gif}" alt="${favsGifs[i].title}">
 			<div class="gif-doing">
@@ -56,37 +56,37 @@ const showFavsGifs = () => { //funtion
 				</div>
 			</div>
 			`;
-			favsCardCnt.appendChild(gifCnt);//Ajustado
+			favsCardCnt.appendChild(gifCnt);
 		}
 	}
 };
-menuFavs.addEventListener("click", showFavsCnt);//Ajustada variable
+menuFavs.addEventListener("click", showFavsCnt);
 
 
 //Muestra la sección de mis gifos
-const showMisGifosCnt = () => { //function
-	misGifosCnt.classList.remove("hidden");//Ajustado
-	mainCnt.classList.add("hidden");//Ajustado
-	favsCnt.classList.add("hidden");//Ajustado
-	newGifSection.classList.add("hidden");//Ajustado
-	trendingGifsCnt.classList.remove("hidden");//Ajustado
+const showMisGifosCnt = () => {
+	misGifosCnt.classList.remove("hidden");
+	mainCnt.classList.add("hidden");
+	favsCnt.classList.add("hidden");
+	newGifSection.classList.add("hidden");
+	trendingGifsCnt.classList.remove("hidden");
 	window.scrollTo({ top: 0, behavior: "smooth" });
 	showMisGifos();
 
-	if (newGifArray == 0 || newGifArray == null) { //array
-		misGifosGapCnt.classList.remove("hidden");//Ajustado
-		misGifosCardCnt.classList.add("hidden");//Ajustado
+	if (newGifArray == 0 || newGifArray == null) {
+		misGifosGapCnt.classList.remove("hidden");
+		misGifosCardCnt.classList.add("hidden");
 	} else {
-		misGifosGapCnt.classList.add("hidden");//Ajustado
-		misGifosCardCnt.classList.remove("hidden");//Ajustado
+		misGifosGapCnt.classList.add("hidden");
+		misGifosCardCnt.classList.remove("hidden");
 	}
 };
-menuGifos.addEventListener("click", showMisGifosCnt);//Ajustada variable
+menuGifos.addEventListener("click", showMisGifosCnt);
 
 //Muestra los gifs en mis gifos
-const showMisGifos = () => { //funtion
-	misGifosCardCnt.innerHTML = '';//ajustado
-	newGifArray = JSON.parse(localStorage.getItem('mis-gifos')); //array
+const showMisGifos = () => {
+	misGifosCardCnt.innerHTML = '';
+	newGifArray = JSON.parse(localStorage.getItem('mis-gifos'));
 	console.log(newGifArray);
 
 	if (newGifArray == null) {
@@ -94,7 +94,7 @@ const showMisGifos = () => { //funtion
 	} else {
 		for (let i = 0; i < newGifArray.length; i++) {
 			try {
-				fetch(`${getGifByIdUrl}?ids=${newGifArray[i]}&api_key=${apiKey}`) //url
+				fetch(`${getGifByIdUrl}?ids=${newGifArray[i]}&api_key=${apiKey}`)
 				.then((response) => response.json())
 				.then((newGifCreated) => {
 					console.log(newGifCreated);
@@ -116,7 +116,7 @@ const showMisGifos = () => { //funtion
 						</div>
 					</div>
 					`;
-					misGifosCardCnt.appendChild(gifCnt);//Ajustado
+					misGifosCardCnt.appendChild(gifCnt);
 				})
 			} catch (err) {
 				console.log(err);
@@ -129,17 +129,17 @@ const showMisGifos = () => { //funtion
 //Funciones de los gifs
 //Download gif
 const downloadGif = async (url, title) => {
-	let blob = await fetch(url).then((img) => img.blob()); //variable
-	invokeSaveAsDialog(blob, title + '.gif'); //variable
+	let blob = await fetch(url).then((img) => img.blob());
+	invokeSaveAsDialog(blob, title + '.gif');
 };
 
 //Enlarge gif 
-const enlargeGif = (gif, username, title) => { //const ajustado
-	enlargeGifCnt.classList.remove("hidden"); //Ajustado
-	enlargeGifCnt.classList.add('enlarged-gif');//Ajustado
-	enlargeGifCnt.innerHTML = '';//Ajustado
-	const enlargeCnt = document.createElement('div'); //variable
-	enlargeCnt.classList.add('enlarge-gif-cnt'); //variable
+const enlargeGif = (gif, username, title) => {
+	enlargeGifCnt.classList.remove("hidden");
+	enlargeGifCnt.classList.add('enlarged-gif');
+	enlargeGifCnt.innerHTML = '';
+	const enlargeCnt = document.createElement('div');
+	enlargeCnt.classList.add('enlarge-gif-cnt');
 	enlargeCnt.innerHTML = ` 
 	<div class="close-btn" onclick="enlargeClose()"></div>
 	<div>
@@ -156,16 +156,16 @@ const enlargeGif = (gif, username, title) => { //const ajustado
 			<div class="largegif-btn-do largegif-download" onclick="downloadGif('${gif}','${title}')"></div>
 			</div>
 	</div>`;
-	enlargeGifCnt.appendChild(enlargeCnt);//AJustado //variable
+	enlargeGifCnt.appendChild(enlargeCnt);
 };
 
 //Enlarge fav gif
-const enlargeFavGif = (gif, username, title) => { //funtion
-	enlargeGifCnt.classList.remove("hidden");//Ajustado
-	enlargeGifCnt.classList.add('enlarged-gif');//Ajustado
-	enlargeGifCnt.innerHTML = '';//Ajustado
-	const enlargeCnt = document.createElement('div'); //variable
-	enlargeCnt.classList.add('enlarge-gif-cnt');//variable
+const enlargeFavGif = (gif, username, title) => {
+	enlargeGifCnt.classList.remove("hidden");
+	enlargeGifCnt.classList.add('enlarged-gif');
+	enlargeGifCnt.innerHTML = '';
+	const enlargeCnt = document.createElement('div');
+	enlargeCnt.classList.add('enlarge-gif-cnt');
 	enlargeCnt.innerHTML = `
 	<div class="close-btn" onclick="enlargeClose()"></div>
 
@@ -183,18 +183,18 @@ const enlargeFavGif = (gif, username, title) => { //funtion
 			<div class="largegif-btn-do largegif-download" onclick="downloadGif('${gif}','${title}')"></div>
 			</div>
 	</div>`;
-	enlargeGifCnt.appendChild(enlargeCnt);//Ajustado
+	enlargeGifCnt.appendChild(enlargeCnt);
 };
 
-const enlargeClose = () => { //funcion
-	enlargeGifCnt.classList.add("hidden");//Ajustado
-	enlargeGifCnt.classList.remove('enlarged-gif');//Ajustado
+const enlargeClose = () => {
+	enlargeGifCnt.classList.add("hidden");
+	enlargeGifCnt.classList.remove('enlarged-gif');
 };
 
 
 //Remove de favs
-const removeGif = (gif) => { //funtion
-	let favsChanged = JSON.parse(localStorage.getItem('favs-gifs')); //class //variable
+const removeGif = (gif) => {
+	let favsChanged = JSON.parse(localStorage.getItem('favs-gifs'));
 	console.log(favsChanged);
 	for (let i = 0; i < favsChanged.length; i++) {
 		if (favsChanged[i].gif === gif) {
@@ -202,7 +202,7 @@ const removeGif = (gif) => { //funtion
 			localStorage.setItem(
 				'favs-gifs', 
 				JSON.stringify(favsChanged)
-			); //class
+			);
 			showFavsCnt();
 			enlargeClose();
 		}
@@ -210,9 +210,8 @@ const removeGif = (gif) => { //funtion
 };
 
 //Remove de mis gifos
-const removeMyGifos = (gif) => { //funtion
-	// event.preventDefault();
-	let miGifosChanged = JSON.parse(localStorage.getItem('mis-gifos')); //variable
+const removeMyGifos = (gif) => {
+	let miGifosChanged = JSON.parse(localStorage.getItem('mis-gifos'));
 	console.log(miGifosChanged);
 	for (let i = 0; i < miGifosChanged.length; i++) {
 		if (miGifosChanged[i] == gif) {

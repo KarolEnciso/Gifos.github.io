@@ -1,77 +1,77 @@
 //Cambia modo del menú hamburguesa
-const showMenu = () => { //funtion
+const showMenu = () => {
 	if (localStorage.getItem("dark-mode") === "true") {
-		if (menuItems.classList.contains("hiddenMenu")) { //Ajustado variable
-			menuItems.classList.remove("hiddenMenu");//Ajustado variable
-			menuBurger.src = "./assets/close-modo-noct.svg";//Ajustado
+		if (menuItems.classList.contains("hiddenMenu")) {
+			menuItems.classList.remove("hiddenMenu");
+			menuBurger.src = "./assets/close-modo-noct.svg";
 		} else {
-			menuItems.classList.add("hiddenMenu");//Ajustado variable
-			menuBurger.src = "./assets/burger-modo-noct.svg";//Ajustado
+			menuItems.classList.add("hiddenMenu");
+			menuBurger.src = "./assets/burger-modo-noct.svg";
 		}
 	} else {
-		if (menuItems.classList.contains("hiddenMenu")) { //Ajustado variable
-			menuItems.classList.remove("hiddenMenu");//Ajustado variable
-			menuBurger.src = "./assets/close.svg";//Ajustado
+		if (menuItems.classList.contains("hiddenMenu")) {
+			menuItems.classList.remove("hiddenMenu");
+			menuBurger.src = "./assets/close.svg";
 		} else {
-			menuItems.classList.add("hiddenMenu");//Ajustado variable
-			menuBurger.src = "./assets/burger.svg";//Ajustado
+			menuItems.classList.add("hiddenMenu");
+			menuBurger.src = "./assets/burger.svg";
 		}
 	}
 };
 
 //Despliega el menú hamburguesa
-menuBurger.addEventListener("click", showMenu);//Ajustado variable //funtion
-menuFavs.addEventListener("click", showMenu);//Ajustado variable //funtion
+menuBurger.addEventListener("click", showMenu);
+menuFavs.addEventListener("click", showMenu);
 menuGifos.addEventListener("click", showMenu);
 
 //Eventos del menu new gif button 
-menuNewgiftBtn.addEventListener("click", () => { //Ajustado
-	menuNewgiftBtn.src = "./assets/CTA-crear-gifo-active.svg";//Ajustado
+menuNewgiftBtn.addEventListener("click", () => {
+	menuNewgiftBtn.src = "./assets/CTA-crear-gifo-active.svg";
 });
 
-menuNewgiftBtn.addEventListener("mouseover", () => { //Ajustado
-	menuNewgiftBtn.src = "./assets/CTA-crear-gifo-hover.svg"; //Ajustado
+menuNewgiftBtn.addEventListener("mouseover", () => {
+	menuNewgiftBtn.src = "./assets/CTA-crear-gifo-hover.svg";
 });
 
-menuNewgiftBtn.addEventListener("mouseout", () => { //Ajustado
-	menuNewgiftBtn.src = "./assets/button-crear-gifo.svg"; //Ajustado
+menuNewgiftBtn.addEventListener("mouseout", () => {
+	menuNewgiftBtn.src = "./assets/button-crear-gifo.svg";
 });
 
 //Input de búsqueda en barra de navegación estática
-function inactiveBar() { //funtion
+function inactiveBar() {
 	if (document.documentElement.scrollTop > 700) {
 		if (window.innerWidth < 1024) {
-			navbarCnt.classList.add("hiddenSearchBar");//Se ajustó la variable
+			navbarCnt.classList.add("hiddenSearchBar");
 		} else {
-			navbarCnt.classList.remove("hiddenSearchBar");//Se ajustó la variable
+			navbarCnt.classList.remove("hiddenSearchBar");
 		}
 	} else {
-		navbarCnt.classList.add("hiddenSearchBar");//Se ajustó la variable
+		navbarCnt.classList.add("hiddenSearchBar");
 	}
 }
 
-window.addEventListener("scroll", inactiveBar); //funtion
+window.addEventListener("scroll", inactiveBar);
 
 //Mostrar la sección de new gif
-const showNewGif = () => { //funtion
-	newGifSection.classList.remove("hidden");//Ajustado
-	mainCnt.classList.add("hidden");//Ajustado
-	favsCnt.classList.add("hidden");//Ajustado
-	trendingGifsCnt.classList.add("hidden");//Ajustado
-	misGifosCnt.classList.add("hidden");//Ajustado
+const showNewGif = () => {
+	newGifSection.classList.remove("hidden");
+	mainCnt.classList.add("hidden");
+	favsCnt.classList.add("hidden");
+	trendingGifsCnt.classList.add("hidden");
+	misGifosCnt.classList.add("hidden");
 	window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
-menuNewGif.addEventListener("click", showNewGif);//Ajustado variable //funtion
+menuNewGif.addEventListener("click", showNewGif);
 
 //Mostrar la página principal
-const showHomepage = () => { //funtion
-	mainCnt.classList.remove("hidden");//Ajustado
-	misGifosCnt.classList.add("hidden");//Ajustado
-	favsCnt.classList.add("hidden");//Ajustado
-	newGifSection.classList.add("hidden");//Ajustado
-	trendingGifsCnt.classList.remove("hidden");//Ajustado
+const showHomepage = () => {
+	mainCnt.classList.remove("hidden");
+	misGifosCnt.classList.add("hidden");
+	favsCnt.classList.add("hidden");
+	newGifSection.classList.add("hidden");
+	trendingGifsCnt.classList.remove("hidden");
 	window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
-logoCnt.addEventListener("click", showHomepage);//Ajustado //funtion
+logoCnt.addEventListener("click", showHomepage);

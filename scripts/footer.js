@@ -1,5 +1,4 @@
 //Eventos social media (Footer) 
-
 imgFacebook.addEventListener("mouseover", function(){
     imgFacebook.src = "./assets/icon_facebook_hover.svg";
 }

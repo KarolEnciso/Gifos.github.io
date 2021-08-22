@@ -1,39 +1,39 @@
 //Búsqueda de los gifs
-let offsetCount = 0; //variable
+let offsetCount = 0;
 const getSearch = async (search) => {
 	cleanSuggestions();
-	searchInput.value = search;//Ajustado
-	navbarInput.value = search;//Ajustado
-	outcomeTitle.innerHTML = search;//Ajustado
+	searchInput.value = search;
+	navbarInput.value = search;
+	outcomeTitle.innerHTML = search;
 	
-	if (offsetCount === 0) { //variable
-		outcomeCardCnt.innerHTML = ''; //Ajustado
+	if (offsetCount === 0) {
+		outcomeCardCnt.innerHTML = '';
 	}
 
 	//Llamado de la búsqueda
-	await fetch(`${searchUrl}?api_key=${apiKey}&q=${search}&offset=${offsetCount}&limit=12&rating=g`) //url //variable
+	await fetch(`${searchUrl}?api_key=${apiKey}&q=${search}&offset=${offsetCount}&limit=12&rating=g`)
 		.then((response) => response.json())
 		.then((results) => {
 			if (results.data == 0) {
-				showErrorSearch();//funtion
+				showErrorSearch();
 			} else {
-				showSearchGif(results); //funtion
+				showSearchGif(results);
 			}
 		})
 		.catch((err) => console.log(err));
 };
 
 //Muestra el gif
-const showSearchGif = (results) => { //funtion
-	outcomeCnt.classList.remove("hidden");//Ajustado
-	outcomeSeeMoreBtn.classList.remove("hidden"); //Ajustado
+const showSearchGif = (results) => {
+	outcomeCnt.classList.remove("hidden");
+	outcomeSeeMoreBtn.classList.remove("hidden");
 
-	if (offsetCount === 0) { //variable
+	if (offsetCount === 0) {
 		window.scrollTo({ top: 600, behavior: "smooth" });
 	}
 
 	if (results.data.length < 12) {
-		outcomeSeeMoreBtn.style.display = "none";//Ajustado
+		outcomeSeeMoreBtn.style.display = "none";
 	}
 
 	for (let i = 0; i < results.data.length; i++) {
@@ -54,44 +54,44 @@ const showSearchGif = (results) => { //funtion
 			</div>
 		</div>
 		`;
-		outcomeCardCnt.appendChild(gifCnt);//Ajustado
+		outcomeCardCnt.appendChild(gifCnt);
 	}
 };
 
 //Muestra cuando la búsqueda no aparece
-const showErrorSearch = () => { //funtion
-	outcomeCnt.classList.remove("hidden");//Ajustado
-	noOutcomeCnt.classList.remove("hidden");//Ajustado
+const showErrorSearch = () => {
+	outcomeCnt.classList.remove("hidden");
+	noOutcomeCnt.classList.remove("hidden");
 	noOutcomeCnt.innerHTML = ` 
 	<div class="error-cnt">
 	<img class="error-search" src="./assets/icon-busqueda-sin-resultado.svg" alt="Imagen ilustrativa de una busqueda sin resultado" >
 	<h4 class="error-search-text">Intenta con otra búsqueda.</h4>
 	</div>
-	`;//Ajustada variable (noOutcomeCnt)
-	outcomeSeeMoreBtn.style.display = "none";//Ajustado
+	`;
+	outcomeSeeMoreBtn.style.display = "none";
 };
 
 //Boton de ver más
-const seeMoreBtn = (e) => { //funtion
+const seeMoreBtn = (e) => {
 	e.preventDefault();
-	offsetCount += 12; //variable
-	if (searchInput.value) { //Ajustado
-		getSearch(searchInput.value);//Ajustado variable
+	offsetCount += 12;
+	if (searchInput.value) {
+		getSearch(searchInput.value);
 	} else {
 		getSearch(navbarInput.value);
 	}
 };
 
 //Sugerencias de búsqueda
-const getSuggestions = async () => { //funtion
+const getSuggestions = async () => {
 	cleanSuggestions();
-	suggestList.classList.remove("hidden");//Ajustado
-	const userInput = searchInput.value;//Ajustado variable
+	suggestList.classList.remove("hidden");
+	const userInput = searchInput.value;
 
 	if (userInput.length >= 1) {
 
 		try {
-			await fetch(`${autocompleteUrl}?api_key=${apiKey}&q=${userInput}&limit=4&rating=g`) //url
+			await fetch(`${autocompleteUrl}?api_key=${apiKey}&q=${userInput}&limit=4&rating=g`)
 			.then((response) => response.json())
 			.then((suggestions) => {
 				showSuggestions(suggestions);
@@ -103,101 +103,99 @@ const getSuggestions = async () => { //funtion
 };
 
 //Muestra la sugerencia de búsqueda
-const showSuggestions = (suggestions) => { //funtion
+const showSuggestions = (suggestions) => {
 	for (let i = 0; i < suggestions.data.length; i++) {
 		const suggestItem = document.createElement('li');
 		suggestItem.classList.add("suggest-items");
 		suggestItem.innerHTML = `
 		<img class="suggest-search-btn" id="" src="./assets/icon-search-gray.svg" alt="Lupa de búsqueda" onclick="getSearch('${suggestions.data[i].name}')">
 		<p class="suggest-search-text" onclick="getSearch('${suggestions.data[i].name}')">${suggestions.data[i].name}</p>`;
-		suggestList.appendChild(suggestItem);//Ajustado
+		suggestList.appendChild(suggestItem);
 	}
 };
 
 //Limpia el contenedor y lo devuelve al incial 
-const cleanResults = () => { //funtion
-	outcomeCnt.classList.add("hidden");//Ajustado
-	noOutcomeCnt.classList.add("hidden");//Ajustado
-	outcomeSeeMoreBtn.style.display = "block";//Ajustado
-	outcomeCardCnt.innerHTML = '';//Ajustado
-	navbarInput.placeholder = "Busca GIFOS y más";//Ajustado
-	searchInput.placeholder = "Busca GIFOS y más"; //Ajustado
+const cleanResults = () => {
+	outcomeCnt.classList.add("hidden");
+	noOutcomeCnt.classList.add("hidden");
+	outcomeSeeMoreBtn.style.display = "block";
+	outcomeCardCnt.innerHTML = '';
+	navbarInput.placeholder = "Busca GIFOS y más";
+	searchInput.placeholder = "Busca GIFOS y más";
 };
 
 // Limpia las sugerencias de búsqueda
-const cleanSuggestions = () => { //funtion
-	suggestList.classList.add("hidden");//Ajustado
-	suggestList.innerHTML = '';//Ajustado
+const cleanSuggestions = () => {
+	suggestList.classList.add("hidden");
+	suggestList.innerHTML = '';
 };
 
 //Buscador activo
-const activeBar = () => { //funtion
-	searchBtn .classList.remove("hidden"); //Ajustado
-	searchClose.classList.remove("hidden");//Ajustado
-	searchIcon.classList.add("hidden");//Ajustado
-	suggestionsCnt.classList.remove("hidden");//Ajustado
-	searchCnt.classList.add("searchActive");//Ajustado variable
-	suggestionsCnt.classList.add("searchActiveContainer");//Ajustado
+const activeBar = () => {
+	searchBtn .classList.remove("hidden");
+	searchClose.classList.remove("hidden");
+	searchIcon.classList.add("hidden");
+	suggestionsCnt.classList.remove("hidden");
+	searchCnt.classList.add("searchActive");
+	suggestionsCnt.classList.add("searchActiveContainer");
 };
 
 const activeNavbar = () => {
-	navbarBtn.classList.remove("hidden"); //Ajustado
-	navbarClose.classList.remove("hidden");//Ajustado
-	navbarIcon.classList.add("hidden");//Ajustado
+	navbarBtn.classList.remove("hidden");
+	navbarClose.classList.remove("hidden");
+	navbarIcon.classList.add("hidden");
 };
 
 
 //Buscador inactivo
 const setInactiveSearchBar = () => {
-	navbarInput.value = '';//Ajustado
-	searchInput.value = '';//Ajustado
+	navbarInput.value = '';
+	searchInput.value = '';
 	cleanResults();
 	cleanSuggestions();
-	suggestionsCnt.classList.add("hidden");//Ajustado
-	searchIcon.classList.remove("hidden");//ajustado
+	suggestionsCnt.classList.add("hidden");
+	searchIcon.classList.remove("hidden");
 	searchClose.classList.add("hidden");
-	searchBtn .classList.add("hidden");//Ajustado
-	searchCnt.classList.remove("searchActive");//Ajustado variable
+	searchBtn .classList.add("hidden");
+	searchCnt.classList.remove("searchActive");
 };
 
 const inactiveNavbar = () => {
-	navbarInput.value = '';//Ajustado
-	searchInput.value = '';//Ajustado
+	navbarInput.value = '';
+	searchInput.value = '';
 	cleanResults();
-	navbarIcon.classList.remove("hidden");//Ajustado
-	navbarClose.classList.add("hidden");//Ajustado
-	navbarBtn.classList.add("hidden"); //Ajustado
+	navbarIcon.classList.remove("hidden");
+	navbarClose.classList.add("hidden");
+	navbarBtn.classList.add("hidden");
 };
 
-
-
 //Eventos de la búsqueda principal
-searchBtn .addEventListener("click", () => { //Ajustado
-	getSearch(searchInput.value);//Ajustado variable
+searchBtn .addEventListener("click", () => {
+	getSearch(searchInput.value);
 });
-searchInput.addEventListener("keypress", (event) => { //Ajustado
+searchInput.addEventListener("keypress", (event) => {
 	if (event.keyCode === 13) {
-		getSearch(searchInput.value);//Ajustado variable
+		getSearch(searchInput.value);
 	}
 });
-searchInput.addEventListener("click", activeBar);//Ajustado //funtion
-searchInput.addEventListener("input", activeBar);//Ajustado // funtion
-searchInput.addEventListener("input", getSuggestions);//Ajustado //input
-searchInput.addEventListener("input", cleanResults);//Ajustado //funtion
-searchClose.addEventListener("click", setInactiveSearchBar);//Ajustado
-outcomeSeeMoreBtn.addEventListener("click", seeMoreBtn); //Ajustado //funtion
+searchInput.addEventListener("click", activeBar);
+searchInput.addEventListener("input", activeBar);
+searchInput.addEventListener("input", getSuggestions);
+searchInput.addEventListener("input", cleanResults);
+searchClose.addEventListener("click", setInactiveSearchBar);
+outcomeSeeMoreBtn.addEventListener("click", seeMoreBtn);
 
 
-// --- Eventos de la navbar
-navbarBtn.addEventListener("click", () => { //Ajustado
+//Eventos barra nav
+navbarBtn.addEventListener("click", () => {
 	getSearch(navbarInput.value);
 });
-navbarInput.addEventListener("keypress", (event) => { //Ajustado variable
+navbarInput.addEventListener("keypress", (event) => {
 	if (event.keyCode === 13) {
 		getSearch(navbarInput.value);
 	}
 });
-navbarInput.addEventListener("click", activeNavbar);//Ajustado //funtion
-navbarInput.addEventListener("input", activeNavbar);//Ajustado //funtion
-navbarClose.addEventListener("click", inactiveNavbar);//Ajustado
-navbarInput.addEventListener("input", cleanResults);//Ajustado //funtion
+navbarInput.addEventListener("click", activeNavbar);
+navbarInput.addEventListener("input", activeNavbar);
+navbarClose.addEventListener("click", inactiveNavbar);
+navbarInput.addEventListener("input", cleanResults);

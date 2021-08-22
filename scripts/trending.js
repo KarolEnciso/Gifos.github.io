@@ -1,63 +1,61 @@
 //Tremding words
 //Llama las trending words
-const getTrendWords = async () => { //funtion
+const getTrendWords = async () => {
 	try {
-		await fetch(`${trendingWordsUrl}?api_key=${apiKey}`) //url
+		await fetch(`${trendingWordsUrl}?api_key=${apiKey}`)
 		.then((response) => response.json())
-		.then((trendWords) => { //callback
-			console.log(trendWords);//callback
-			showTrendWords(trendWords);//funtion //callback
+		.then((trendWords) => {
+			console.log(trendWords);
+			showTrendWords(trendWords);
 		});
 	} catch (err) {
 		console.log(err)
 	}
 };
-getTrendWords();//funtion
+getTrendWords();
 
 //Muestra las trending words
-const showTrendWords = (trendWords) => { //funtion //callback
+const showTrendWords = (trendWords) => {
 	for (let i = 0; i < 5; i++) {
-		const trendWordItem = document.createElement("span");//variable
-		trendWordItem.classList.add("trending-word-item");//variable //class
-		trendWordItem.setAttribute(//variable
+		const trendWordItem = document.createElement("span");
+		trendWordItem.classList.add("trending-word-item");
+		trendWordItem.setAttribute(
 			'onclick',
-			`getSearch("${trendWords.data[i]}")` //callback
+			`getSearch("${trendWords.data[i]}")`
 		);
-		trendWordItem.innerHTML = `${trendWords.data[i]}`; //callback //variable
-		trendingWords.appendChild(trendWordItem);//Ajustado //variable
+		trendWordItem.innerHTML = `${trendWords.data[i]}`;
+		trendingWords.appendChild(trendWordItem);
 	}
 };
-
 
 //Trending gifs 
 //Ajusta las flechas según el modo
-const changeArrows = () => { //funtion
+const changeArrows = () => {
 	if (localStorage.getItem("dark-mode") === "true") {
-		leftBtn.src = "./assets/button-slider-left-md-noct.svg"; //Ajustado
-		rightBtn.src = "./assets/button-slider-right-md-noct.svg"; //Ajustado
+		leftBtn.src = "./assets/button-slider-left-md-noct.svg";
+		rightBtn.src = "./assets/button-slider-right-md-noct.svg";
 	} else {
-		leftBtn.src = "./assets/button-slider-left.svg";//Ajustado
-		rightBtn.src = "./assets/Button-Slider-right.svg"; //Ajustado
+		leftBtn.src = "./assets/button-slider-left.svg";
+		rightBtn.src = "./assets/Button-Slider-right.svg";
 	}
 };
 
-leftBtn.addEventListener("mouseover", () => { //Ajustado
-	leftBtn.src = "./assets/button-slider-left-hover.svg"; //ajustado
+leftBtn.addEventListener("mouseover", () => {
+	leftBtn.src = "./assets/button-slider-left-hover.svg";
 });
-leftBtn.addEventListener("mouseout", changeArrows);//Ajustado //funtion
+leftBtn.addEventListener("mouseout", changeArrows);
 
 
-rightBtn.addEventListener("mouseover", () => { //Ajustado
-	rightBtn.src = "./assets/Button-Slider-right-hover.svg"; //AJustado
+rightBtn.addEventListener("mouseover", () => {
+	rightBtn.src = "./assets/Button-Slider-right-hover.svg";
 });
-rightBtn.addEventListener("mouseout", changeArrows);//Ajustado //funtion
-
+rightBtn.addEventListener("mouseout", changeArrows);
 
 
 //Trending gifos
 const getTrendingGif = async () => {
 	try {
-		await fetch(`${trendingGifsUrl}?api_key=${apiKey}&limit=12&rating=g`)//url
+		await fetch(`${trendingGifsUrl}?api_key=${apiKey}&limit=12&rating=g`)
 		.then((response) => response.json())
 		.then((results) => {
 			console.log(results);
@@ -76,7 +74,6 @@ const showTrendingGif = (results) => {
 		gifCnt.classList.add('gif-cnt');
 		gifCnt.innerHTML = ` 
 		<img class="gif-img" onclick="enlargeGif('${results.data[i].images.original.url}','${results.data[i].username}','${results.data[i].title}')" src="${results.data[i].images.original.url}" alt="${results.data[i].title}">
-	
 		<div class="gif-doing">
 			<div class="gif-doing-btn">
 				<div class="dobtn fav-do" onclick="addFavsGif('${results.data[i].images.original.url}','${results.data[i].username}','${results.data[i].title}')"></div>
@@ -89,17 +86,17 @@ const showTrendingGif = (results) => {
 			</div>
 		</div>
 		`;
-		trendingSlider.appendChild(gifCnt);//Ajustado
+		trendingSlider.appendChild(gifCnt);
 	}
 };
 
 const rigthBtnSlider = () => {
-	trendingSlider.scrollLeft += 600;//Ajustado
+	trendingSlider.scrollLeft += 600;
 };
-rightBtn.addEventListener('click', rigthBtnSlider);//Ajustado
+rightBtn.addEventListener('click', rigthBtnSlider);
 
 const leftBtnSlider = () => {
-	trendingSlider.scrollLeft -= 600; //Ajustado
+	trendingSlider.scrollLeft -= 600;
 };
-leftBtn.addEventListener('click', leftBtnSlider);//Ajustado
+leftBtn.addEventListener('click', leftBtnSlider);
 
