@@ -1,27 +1,157 @@
 //Acciones de los gifs
-
-.gif-cnt { //ajustado
+.gif-cnt {
 	position: relative;
 
-	.gif-img { //ajustado
+	.gif-img {
 		margin: 0.5rem;
 		width: 8rem;
 		height: 6rem;
 	}
 
-	.gif-doing { //Ajustado
+	.gif-doing {
 		display: none;
 	}
+}
 
-	@media screen and (min-width: $iphone) {
+.enlarged-gif {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	background: rgba(255, 255, 255, 0.9);
+	z-index: 2000;
+
+	body.darkMode & {
+		background-color: $gray_dark_back;
+	}
+
+	.enlarge-gif-cnt {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+}
+
+.close-btn {
+	width: 2rem;
+	padding-bottom: 3rem;
+	margin-right: 2rem;
+	align-self: flex-end;
+	cursor: pointer;
+	background: url('../assets/close.svg') center no-repeat;
+
+	body.darkMode & {
+		background: url('../assets/close-modo-noct.svg') center no-repeat;
+	}
+
+}
+
+.gif-data {
+	color: black;
+	font-family: $montserrat;
+	font-size: 14px;
+
+	@media screen and (min-width: $tablet) {
+		font-size: 16px;
+	}
+
+	body.darkMode & {
+		color: $other_white;
+	}
+}
+
+.gif-data-title{
+	font-weight: 300;
+}
+
+
+//Enlarge gif mid
+.large-gif{ 
+	display: block;
+	max-width: 90%;
+	margin: 0 auto;
+}
+.enlarge-gifs-doing {
+	width: 90%;
+	margin: 0 auto;
+	padding-top: 0.5rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.gif-btn-doing {
+	display: flex;
+}
+
+.largegif-btn-do {
+	width: 1rem;
+	height: 1rem;
+	padding: 0.8rem;
+	margin: 2px;
+	cursor: pointer;
+}
+
+.largegif-favs { //ajustado
+	background: url('../assets/icon-fav.svg') center no-repeat;
+	&:hover {
+		background: url('../assets/icon-fav-hover.svg') center no-repeat;
+	}
+	&:active {
+		background: url('../assets/icon-fav-active.svg') center no-repeat;
+	}
+}
+
+.largegif-download { //ajustado
+	background: url('../assets/icon-download.svg') center no-repeat;
+	&:hover {
+		background: url('../assets/icon-download-hover.svg') center no-repeat;
+	}
+}
+
+.largegif-remove { //ajustado
+	background: url('../assets/icon-trash-normal.svg') center no-repeat;
+	&:hover {
+		background: url('../assets/icon-trash-hover.svg') center no-repeat;
+	}
+}
+
+//Estilos new gif grabar
+.cover-download { //ajustado
+	background: url('../assets/icon-download.svg') center no-repeat;
+
+	&:hover {
+		background: url('../assets/icon-download-hover.svg') center
+			no-repeat;
+	}
+}
+
+.cover-link { //ajustado
+	background: url('../assets/icon-link-normal.svg') center no-repeat;
+
+	&:hover {
+		background: url('../assets/icon-link-hover.svg') center no-repeat;
+	}	
+}
+
+//-MEDIA QUIERIES-//
+//Vista mobible
+@media screen and (min-width: $mobile) {
+	.gif-cnt {
 		.gif-img { //ajustado
 			margin: 1rem;
 			width: 10rem;
 			height: 8rem;
 		}
 	}
+	
+}
 
-	@media screen and (min-width: $tablet) {
+//Vista tablet
+@media screen and (min-width: $tablet) {
+	.gif-cnt {
 		.gif-img { //ajustado
 			width: 14rem;
 			height: 11rem;
@@ -35,7 +165,7 @@
 			height: 11rem;
 			position: absolute;
 			top: 0;
-			background-color: $purpleTransparency;
+			background-color: $violet_soft;
 			transition: 0.2s ease-in-out;
 
 			&:hover {
@@ -96,11 +226,14 @@
 			bottom: 15%;
 			font-weight: 500;
 			text-align: left;
-			color: #fff;
+			color: $other_white;
 		}
 	}
+}
 
-	@media screen and (min-width: $desktop) {
+//Vista desktop
+@media screen and (min-width: $desktop) {
+	.gif-cnt {
 		.gif-img { //AJustado
 			width: 17rem;
 			height: 14rem;
@@ -111,7 +244,15 @@
 		}
 	}
 
-	@media screen and (min-width: $genericLaptop) {
+	.largegif-btn-do{
+		width: 2rem;
+		height: 2rem;
+	}
+} 
+
+//Vista generica
+@media screen and (min-width: $generic) {
+	.gif-cnt {
 		.gif-img { //Ajustado
 			width: 22rem;
 			height: 16rem;
@@ -122,138 +263,3 @@
 		}
 	}
 }
-
-.enlarged-gif { //ajUSTADO
-	width: 100%;
-	height: 100%;
-	position: fixed;
-	top: 0;
-	left: 0;
-	display: flex;
-	justify-content: center;
-	background: rgba(255, 255, 255, 0.9);
-	z-index: 2000;
-
-	body.darkMode & {
-		background-color: $backgroundDark;
-	}
-
-	.enlarge-gif-cnt { //ajustado
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	}
-}
-
-.close-btn { //ok
-	width: 2rem;
-	padding-bottom: 3rem;
-	margin-right: 2rem;
-	align-self: flex-end;
-	cursor: pointer;
-	background: url('../assets/close.svg') center no-repeat;
-
-	body.darkMode & {
-		background: url('../assets/close-modo-noct.svg') center no-repeat;
-	}
-
-}
-
-.gif-data { //Ajustado (revisar con el de arriba)
-	color: black;
-	font-family: $secondary-font;
-	font-size: 14px;
-
-	@media screen and (min-width: $tablet) {
-		font-size: 16px;
-	}
-
-	body.darkMode & {
-		color: #fff;
-	}
-}
-
-.gif-data-title{ //Ajustado (Mirar si se puede ajustar esa letra)
-	font-weight: 500;
-
-}
-
-
-//Enlarge gif mid
-.large-gif{ //AJUSTADO
-	display: block;
-	max-width: 90%;
-	margin: 0 auto;
-}
-.enlarge-gifs-doing { //ajustado
-	width: 90%;
-	margin: 0 auto;
-	padding-top: 0.5rem;
-	display: flex;
-	justify-content: space-between;
-}
-
-.gif-btn-doing { //ajustadi
-	display: flex;
-}
-
-.largegif-btn-do { //ajustado
-	width: 1rem;
-	height: 1rem;
-	padding: 0.8rem;
-	margin: 2px;
-	cursor: pointer;
-
-	@media screen and (min-width: $tablet) {
-		width: 2rem;
-		height: 2rem;
-	}
-}
-
-
-.largegif-favs { //ajustado
-	background: url('../assets/icon-fav.svg') center no-repeat;
-	&:hover {
-		background: url('../assets/icon-fav-hover.svg') center no-repeat;
-	}
-	&:active {
-		background: url('../assets/icon-fav-active.svg') center no-repeat;
-	}
-}
-
-.largegif-download { //ajustado
-	background: url('../assets/icon-download.svg') center no-repeat;
-	&:hover {
-		background: url('../assets/icon-download-hover.svg') center no-repeat;
-	}
-}
-
-.largegif-remove { //ajustado
-	background: url('../assets/icon-trash-normal.svg') center no-repeat;
-	&:hover {
-		background: url('../assets/icon-trash-hover.svg') center no-repeat;
-	}
-}
-
-
-
-
-//Estilos new gif grabar
-
-.cover-download { //ajustado
-	background: url('../assets/icon-download.svg') center no-repeat;
-
-	&:hover {
-		background: url('../assets/icon-download-hover.svg') center
-			no-repeat;
-	}
-}
-
-.cover-link { //ajustado
-	background: url('../assets/icon-link-normal.svg') center no-repeat;
-
-	&:hover {
-		background: url('../assets/icon-link-hover.svg') center no-repeat;
-	}	
-}
-

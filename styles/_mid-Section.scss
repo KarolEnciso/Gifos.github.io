@@ -1,27 +1,29 @@
-.mid-containers { //Ajustado
+.mid-containers {
 	padding-top: 10%;
 	text-align: center;
-	font-family: $secondary-font;
+	font-family: $montserrat;
 	font-weight: 500;
 }
 
-.mid-title { //Ajustado
+.mid-title {
 	margin-top: 0.5rem;
 	margin-bottom: 2.8rem;
 }
 
-.mid-gap-img { //Ajustado
+.mid-gap-img {
 	margin-top: 3rem;
 	margin-bottom: 2rem;
 }
-.mid-gap-text { //Ajustado
+.mid-gap-text {
 	padding: 0.5rem 0 3rem 0;
-	color: $aqua;
+	color: $green;
 	font-size: 16px;
 }
 
+
+//-MEDIA QUERIES-//
 //Vista mobile 
-@media screen and (min-width: $iphone) {
+@media screen and (min-width: $mobile) {
 	.containers {
 		padding-top: 20%;
 	}
@@ -35,7 +37,7 @@
 }
 
 //Vista general 
-@media screen and (min-width: $genericLaptop) {
+@media screen and (min-width: $generic) {
 	.mid-containers {
 		padding-top: 10%;
 	}

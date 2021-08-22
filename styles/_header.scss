@@ -1,6 +1,6 @@
-.header-cnt { //Ajustado
+.header-cnt {
 	width: 100%;
-	border-top: 5px solid $purple;
+	border-top: 5px solid $violet;
 	padding: 2% 10% 1.5% 10%;
 	position: fixed;
 	background-color: white;
@@ -11,54 +11,54 @@
 	z-index: 1000;
 
 	body.darkMode & {
-		background-color: $backgroundDark;
+		background-color: $gray_dark_back;
 		border: none;
 	}
 }
 
-.logo-img { //Ajustado
+.logo-img {
 	width: 3rem;
 }
 
-.menu-cnt { //Ajustado
+.menu-cnt {
 	float: right;
 
-	.menu-burger { //Ajustado
+	.menu-burger {
 		cursor: pointer;
 		padding: 1rem;
 	}
 
-	.separator { //Ajustado
+	.separator {
 		width: 12%;
 		margin: 0 auto;
 		border: 0.2px solid rgba(211, 211, 211, 0.493);
 	}
 
-	.menu-items { //Ajustado
+	.menu-items {
 		width: 100%;
 		height: 100vh;
 		padding: 0.5rem 0;
 		position: absolute;
 		top: 100%;
 		left: 0;
-		background-color: transparentize($purple, 0.1);
+		background-color: transparentize($violet, 0.1);
 		text-align: center;
 
 		body.darkMode & {
-			background-color: $backgroundBlack;
+			background-color: $black_back;
 		}
 	}
 
-	.menu-item { //Ajustado
+	.menu-item {
 		width: 100%;
 		margin: 0 auto;
 		display: block;
-		font-family: $secondary-font;
+		font-family: $montserrat;
 		font-weight: 500;
 		font-size: 1em;
 		line-height: 3.5em;
 		letter-spacing: 0.5px;
-		color: #fff;
+		color: $other_white;
 
 		body.darkMode & {
 			color: white;
@@ -66,11 +66,11 @@
 	}
 }
 
-.navbar-search-cnt { //Ajustadpo
+.navbar-search-cnt {
 	width: 30%;
 	height: 60%;
 	padding: 1%;
-	border: 1px solid $purple;
+	border: 1px solid $violet;
 	border-radius: 20px;
 	display: flex;
 	justify-content: space-between;
@@ -78,16 +78,16 @@
 	z-index: 2;
 
 	body.darkMode & {
-		border: 1px solid #fff;
+		border: 1px solid $other_white;
 	}
 
-	.navbar-search-input { //Ajustado
+	.navbar-search-input {
 		width: 100%;
 		padding-left: 3%;
 		border: none;
-		color: $lightGray;
+		color: $gray_soft;
 
-		font-family: $primary-font;
+		font-family: $roboto;
 		font-size: 14px;
 		outline: none;
 
@@ -99,16 +99,16 @@
 
 }
 
-.navbar-search-icon { //Ajustado
+.navbar-search-icon {
 	padding-right: 10px;
 }
 
-.navbar-search-btn { //Ajustado
+.navbar-search-btn {
 	width: 1.25rem;
 	margin-left: 2%;
 }
 
-.navbar-search-close { //Ajustado
+.navbar-search-close {
 	margin-right: 2%;
 }
 
@@ -121,22 +121,19 @@
 }
 
 
+//-MEDIA QUERIES-//
 //Vista tablet 
-
 @media screen and (min-width: $tablet) {
 	.logo-img {
 		width: 3.7rem;
 	}
-
 	.menu-burger {
 		display: none;
 	}
-
 	.menu-cnt {
 		.separator {
 			display: none;
 		}
-
 		.menu-items {
 			height: 100%;
 			position: relative;
@@ -151,25 +148,23 @@
 				background-color: transparent;
 			}
 		}
-
 		.menu-item {
 			width: fit-content;
 			padding-top: 1rem;
 			line-height: 1.5rem;
-			color: $purple;
+			color: $violet;
 			text-transform: uppercase;
 
 			&:hover {
-				border-bottom: 2px solid $aqua;
+				border-bottom: 2px solid $green;
 			}
 
 			&:active {
-				color: $lightGray;
+				color: $gray_soft;
 				border-bottom: hidden;
 			}
 		}
 	}	
-	
 	.hiddenMenu {
 		display: flex;
 	}

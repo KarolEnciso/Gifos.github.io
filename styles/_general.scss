@@ -8,46 +8,46 @@
 }
 
 body {
-	font-family: $primary-font;
-	color: $purple;
+	font-family: $roboto;
+	color: $violet;
 	transition: $transition;
 
 	&.darkMode {
-		background-color: $backgroundDark;
-		color: #fff;
+		background-color: $gray_dark_back;
+		color: $other_white;
 	}
 }
 
 .gifos-word { 
-	color: $aqua;
+	color: $green;
 }
 
 .button {
 	display: block;
 	width: fit-content;
 	margin: 1rem auto;
-	border: 1.8px solid $purple;
+	border: 1.8px solid $violet;
 	border-radius: 2rem;
 	padding: 1.2rem 1.3rem;
 	text-decoration: none;
-	font-family: $secondary-font;
+	font-family: $montserrat;
 	text-align: center;
 	font-weight: 500;
 	font-size: 13px;
-	color: $purple;
+	color: $violet;
 	cursor: pointer;
 
 	&:hover {
-		background-color: $purple;
-		color: #fff;
+		background-color: $violet;
+		color: $other_white;
 	}
 
 	body.darkMode & {
-		border: 2px solid #fff;
-		color: #fff;
+		border: 2px solid $other_white;
+		color: $other_white;
 
 		&:hover {
-			background-color: #fff;
+			background-color: $other_white;
 			color: #37383c;
 		}
 	}

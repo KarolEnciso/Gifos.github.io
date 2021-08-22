@@ -1,30 +1,27 @@
 //Trending words
-.trending-words-cnt { //Ajustado
-	font-family: $secondary-font;
+.trending-words-cnt {
+	font-family: $montserrat;
 	font-size: 1.1em;
 	font-weight: 500;
 	padding: 6% 0 2% 0;
 
-	.trending-words-title { //Ajustado
+	.trending-words-title {
 		padding-bottom: 2%;
 		font-size: 1em;
 	}
 
-	.trending-words-items { //Ajustado
+	.trending-words-items {
 		font-weight: 400;
 	}
 
-	.trending-word-item { //Ajustado
+	.trending-word-item {
 		cursor: pointer;
-
 		&:hover {
 			font-weight: 600;
 		}
-
 		&::after {
 			content: ',  ';
 		}
-
 		&:last-child::after {
 			content: ' ';
 		}
@@ -32,61 +29,55 @@
 }
 
 //Trending GIFS
-.trending-gifs-section { //Ajustado
+.trending-gifs-section {
 	padding: 15% 0 8% 0;
 	background-color: #f3f5f8;
 	text-align: center;
 
 	body.darkMode & {
-		background-color: $backgroundBlack;
+		background-color: $black_back;
 	}
 
-	.trending-gifs-title { //Ajustado
+	.trending-gifs-title {
 		margin: 10px;
-		font-family: $secondary-font;
+		font-family: $montserrat;
 		font-weight: 500;
 	}
 
-	.trending-gifs-text { //Ajustado
+	.trending-gifs-text {
 		margin: 10px;
 		color: #000;
 
 		body.darkMode & {
-			color: #fff;
+			color: $other_white;
 		}
 	}
 }
 
-.trending-gifs-cnt { //Ajustado
+.trending-gifs-cnt {
 	max-width: 100%;
 	display: flex;
 	align-items: center;
 
-	.trending-showgif-cnt { //ajustado
+	.trending-showgif-cnt {
 		overflow: hidden;
 	}
 
-	.trending-showgif-slider { //Ajustado
+	.trending-showgif-slider {
 		width: 100%;
 		display: flex;
 		overflow: scroll;
 	}
-
-	// .arrows { //Ajustado
-	// 	display: none;
-	// }
-
-	
 }
 	
 
+//-MEDIA QUERIES-//
 //Vista para mobile
 @media screen and (max-width: 500px) {
 	.arrows {
 		display: none;
 	}
 }
-
 
 //Vista para tablet
 @media screen and (min-width: $tablet) {
@@ -115,7 +106,7 @@
 }
 
 //Vista para escritorio generico
-@media screen and (min-width: $genericLaptop) {
+@media screen and (min-width: $generic) {
 
 	.trending-gifs-section {
 		padding: 8% 0 8% 0;

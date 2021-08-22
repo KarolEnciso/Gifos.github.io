@@ -1,8 +1,8 @@
-.newgif-section { //ajustado
+.newgif-section {
 	padding-top: 12%;
 	position: relative;
 
-	.newgif-cnt { //ajustado
+	.newgif-cnt {
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
@@ -10,11 +10,11 @@
 	}
 
 	//Camara
-	.newgif-camera-cnt {//ajustado
+	.newgif-camera-cnt {
 		max-width: 25%;
 		position: relative;
 
-		.camera-light {//ajustado
+		.camera-light {
 			position: relative;
 			top: -1rem;
 		}
@@ -22,7 +22,7 @@
 	
 
 	//New gif
-	.cover-btns { //Ajustado
+	.cover-btns {
 		width: 6.8rem;
 		padding: 2%;
 		position: absolute;
@@ -31,7 +31,7 @@
 		top: 0;
 		right: 0;
 
-		.btns { //ok
+		.btns {
 			width: 2rem;
 			height: 2rem;
 			cursor: pointer;
@@ -41,11 +41,11 @@
 }
 
 //Grabación
-.newgif-record-cnt { //Ajustado
+.newgif-record-cnt {
 	padding: 2rem;
 	width: 50%;
 	height: 20rem;
-	border: 1px solid $purple;
+	border: 1px solid $violet;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -55,59 +55,57 @@
 	position: relative;
 
 	body.darkMode & {
-		border: 1px solid #fff;
+		border: 1px solid $other_white;
 	}
 }
 
-.corner { //Ajustado
+.corner {
 	width: 1.7rem;
 	height: 1.7rem;
 	position: absolute;
 }
 
-.up-left { //Ajustado
-	border-top: 1px solid $aqua;
-	border-left: 1px solid $aqua;
+.up-left {
+	border-top: 1px solid $green;
+	border-left: 1px solid $green;
 	top: 1.25rem;
 	left: 1.25rem;
 }
-.up-right { //Ajustado
-	border-top: 1px solid $aqua;
-	border-right: 1px solid $aqua;
+.up-right {
+	border-top: 1px solid $green;
+	border-right: 1px solid $green;
 	top: 1.25rem;
 	right: 1.25rem;
 }
 
-.down-left { //Ajustado
-	border-bottom: 1px solid $aqua;
-	border-right: 1px solid $aqua;
+.down-left {
+	border-bottom: 1px solid $green;
+	border-right: 1px solid $green;
 	bottom: 1.25rem;
 	right: 1.25rem;
 }
-.down-right { //Ajustado
-	border-bottom: 1px solid $aqua;
-	border-left: 1px solid $aqua;
+.down-right {
+	border-bottom: 1px solid $green;
+	border-left: 1px solid $green;
 	bottom: 1.25rem;
 	left: 1.25rem;
 }
 
-.newgif-record-content { //Ajustado
-
-	.newgif-title { //Ajustado
-		font-family: $secondary-font;
+.newgif-record-content {
+	.newgif-title {
+		font-family: $montserrat;
 	}
-
-	.newgif-text { //Ajustado
+	.newgif-text {
 		padding-top: 10px;
 		color: black;
 
 		body.darkMode & {
-			color: #fff;
+			color: $other_white;
 		}
 	}
 }
 
-.newgif-video { //Ajustado
+.newgif-video {
 	min-width: 80%;
 	min-height: 20rem;
 	max-width: 80%;
@@ -115,37 +113,36 @@
 	z-index: 3000;
 }
 
-.newgif-video-record { //Ajustado
+.newgif-video-record {
 	width: 100%;
 	z-index: 3000;
 }
 
-.cover { //Ajustado 
+.cover { 
 	width: 100%;
 	height: 100%;
 	position: absolute;
 	top: 0;
 	left: 0;
-	background-color: $purpleTransparency;
-	color: #fff;
+	background-color: $violet_soft;
+	color: $other_white;
 	z-index: 90;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 
-	.cover-cnt { //Ajustado 
+	.cover-cnt {
 		display: flex;
 		flex-direction: column;
 	}
 
-	.cover-icon { //Ajustado 
+	.cover-icon {
 		margin: 0.8rem;
 	}
-	
 }
 
-.newgif-movie { //Ajustado
+.newgif-movie {
 	max-width: 25%;
 	height: 20rem;
 	padding-top: 18rem;
@@ -153,7 +150,7 @@
 }
 
 //Pasos de grabación
-.steps-cnt { //Ajustado
+.steps-cnt {
 	margin: 0 auto;
 	width: 75%;
 	width: fit-content;
@@ -163,71 +160,71 @@
 	justify-content: center;
 	text-align: center;
 
-	.step { //Se dejó así
+	.step {
 		width: 2rem;
 		height: 2rem;
 		padding-top: 0.2em;
 		margin: 1.5rem 0.5rem 1.5rem 0.5rem;
-		border: 1px solid $purple;
+		border: 1px solid $violet;
 		border-radius: 50%;
 		font-size: 1.2em;
 
 		body.darkMode & {
-			border: 1px solid #fff;
+			border: 1px solid $other_white;
 		}
 	}
 
-	.step-active { //----(ESTE SE ENCUENTRA PENDIENTE)
-		background-color: $purple;
-		color: #fff;
+	.step-active {
+		background-color: $violet;
+		color: $other_white;
 	}
 }
 
-.counter-cnt { //AJustado
+.counter-cnt {
 	width: 25%;
 	text-align: right;
 	position: absolute;
 	top: 79%;
 	right: 24%;
 
-	.counter-text { //Ajustado
-		font-family: $secondary-font;
+	.counter-text {
+		font-family: $montserrat;
 		font-size: 16px;
 
 		line-height: 22px;
 	}
 }
 
-#counter-newshot { //Ajustado
-	color: $purple;
+#counter-newshot {
+	color: $violet;
 	text-decoration: none;
 
 	&:hover {
-		border-bottom: 2px solid $aqua;
+		border-bottom: 2px solid $green;
 	}
 
 	&:active {
-		color: $lightGray;
+		color: $gray_soft;
 		border-bottom: hidden;
 	}
 }
 
-.newgif-bottom-line { //ajustado
+.newgif-bottom-line {
 	width: 58%;
 	margin: 0 auto;
-	border: 2px solid $purple;
+	border: 2px solid $violet;
 }
 
-
-//Vista desktop
-@media screen and (min-width: $desktop2) {
+//-MEDIA QUERIES-//
+//Vista desktop bigger
+@media screen and (min-width: $desktop_bigger) {
 	.newgif-section {
 		padding-top: 10%;
 	}
 }
 
 //Vista desktop generica
-@media screen and (min-width: $genericLaptop) {
+@media screen and (min-width: $generic) {
 	.newgif-section {
 		padding-top: 9%;
 	}

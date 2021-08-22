@@ -1,20 +1,17 @@
-// Fuentes
-$primary-font: 'Roboto', sans-serif;
-$secondary-font: 'Montserrat', sans-serif;
-
-// Colores
-$purple: #572ee5;
-$aqua: #50e3c2;
+$violet: #572ee5;
+$green: #50e3c2;
 $white: #f3f5f8;
-$lightGray: #9cafc3;
-$backgroundDark: #37383c;
-$backgroundBlack: #222326;
-$purpleTransparency: rgba(87, 46, 229, 0.6);
-
-//Media Query
-$iphone: 400px; //No se usa 
+$gray_soft: #9cafc3;
+$gray_dark_back: #37383c;
+$black_back: #222326;
+$violet_soft: rgba(87, 46, 229, 0.6);
+$other_white: #fff;
+$mobile: 400px;
 $tablet: 768px;
 $desktop: 1024px;
-$desktop2: 1280px;
-$genericLaptop: 1530px;
+$desktop_bigger: 1280px;
+$generic: 1530px;
 $transition: 0.3s ease-in-out; 
+$roboto: 'Roboto', sans-serif;
+$montserrat: 'Montserrat', sans-serif;
+

@@ -31,13 +31,13 @@
 		<nav class="menu-cnt">
 			<img class="menu-burger" id="menu-burger" src="./assets/burger.svg" alt="Imágen del menú hamburguesa">
 			<ul class="menu-items hiddenMenu" id="menu-items">
-				<li class="navbar__list__item"><a href="#" class="menu-item" id="change-mode">Modo Nocturno</a></li>
+				<li class="menu-list-item"><a href="#" class="menu-item" id="change-mode">Modo Nocturno</a></li>
 				<li class="separator"></li>
 				<li><a href="#" class="menu-item" id="Menu-favourites">Favoritos</a></li>
 				<li class="separator"></li>
 				<li><a href="#" class="menu-item" id="Menu-gifos">Mis GIFOS</a></li>
 				<li class="separator"></li>
-				<li class="navbar__list__item hiddenMenu"><a href="#" id="menu-newgif"><img id="menu-newgif-btn"
+				<li class="menu-list-item hiddenMenu"><a href="#" id="menu-newgif"><img id="menu-newgif-btn"
 							src="./assets/button-crear-gifo.svg" alt="Icono de crear nuevo gifo"></a></li>
 			</ul>
 		</nav>
@@ -156,12 +156,12 @@
 			<p class="step" id="step-three">3</p>
 		</div>
 		<div class="counter-cnt">
-			<p class="timer__recorder counter-text hidden" id="counter-time">00:00:00</p>
-			<a href="#" class="timer__repeatShot counter-text hidden" id="counter-newshot">REPETIR CAPTURA</a>
+			<p class="counter-record counter-text hidden" id="counter-time">00:00:00</p>
+			<a href="#" class="counter-newshot counter-text hidden" id="counter-newshot">REPETIR CAPTURA</a>
 		</div>
 		<hr class="newgif-bottom-line">
 		<!--Botones de grabación -->
-		<div class="button__container">
+		<div class="button-cnt">
 			<a class="button" id="start-btn">COMENZAR</a>
 			<a class="button" id="record-btn">GRABAR</a>
 			<a class="button" id="end-btn">FINALIZAR</a>
@@ -174,8 +174,8 @@
 	<section class="trending-gifs-section" id="trending-gifs-section">
 		<h2 class="trending-gifs-title">Trending GIFOS</h2>
 		<p class="trending-gifs-text">Mira los últimos GIFO de nuestra comunidad</p>
+		<!--Slider-->
 		<div class="trending-gifs-cnt">
-			<!--Slider-->
 			<div class="left-btn arrows">
 				<img id="left-btn" src="./assets/button-slider-left.svg" alt="Imagen de flecha izquierda">
 			</div>
@@ -190,33 +190,33 @@
 	<!--Fin de la sección de los gifs en trending-->
 
 	<!--Inicio de la sección del footer-->
-
-
 	<footer>
-		<h4>Compartir en:</h4>
-		<div class="icon-media">
-			<a href="https://www.facebook.com/" target="_blank"><img src="./assets/icon_facebook.svg"
+		<div class="social-media-cnt">
+			<p class="social-media-text">Compartir en:</p>
+			<div class="icon-media">
+				<a class="icon-media-item" href="https://www.facebook.com/" target="_blank"><img src="./assets/icon_facebook.svg"
 					alt="Icono de Facebook" id="facebook"></a>
-			<a href="https://twitter.com/?lang=es" target="_blank"><img src="./assets/icon-twitter.svg"
+				<a class="icon-media-item" href="https://twitter.com/?lang=es" target="_blank"><img src="./assets/icon-twitter.svg"
 					alt="Icono de Twitter" id="twitter"></a>
-			<a href="https://www.instagram.com/" target="_blank"><img src="./assets/icon_instagram.svg"
+				<a class="icon-media-item" href="https://www.instagram.com/" target="_blank"><img src="./assets/icon_instagram.svg"
 					alt="Icono de Instagram" id="instagram"></a>
+			</div>
 		</div>
-		<p> &copy; GIFOS 2020 All Rights Reserved. </p>
+		<p class="social-media-text">© GIFOS 2020 All Rights Reserved.</p>
 	</footer>
 	<!--Fin de la sección del footer-->
 
-
+<!--Scripts-->
 	<script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
-	<script src="./scripts/variables.js"></script> <!--OK-->
-	<script src="./scripts/api-endpoint.js"></script> <!--OK-->
-	<script src="./scripts/shift-mode.js"></script> <!--OK-->
+	<script src="./scripts/variables.js"></script>
+	<script src="./scripts/api-endpoint.js"></script>
+	<script src="./scripts/shift-mode.js"></script>
 	<script src="./scripts/navbar.js"></script>
 	<script src="./scripts/gif-functions.js"></script>
 	<script src="./scripts/search.js"></script>
 	<script src="./scripts/trending.js"></script>
 	<script src="./scripts/create-gif.js"></script>
-	<script src="./scripts/footer.js"></script> <!--Pendiente hacer arreglos de estilo-->
+	<script src="./scripts/footer.js"></script>
 
 </body>
 
