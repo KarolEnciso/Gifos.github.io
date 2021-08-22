@@ -61,32 +61,32 @@
 		.fav-do { //ajustado
 			background: url('../assets/icon-fav.svg') center no-repeat;
 			&:hover {
-				background: url('/assets/icon-fav-hover.svg') center no-repeat;
+				background: url('../assets/icon-fav-hover.svg') center no-repeat;
 			}
 			&:active {
-				background: url('/assets/icon-fav-active.svg') center no-repeat;
+				background: url('../assets/icon-fav-active.svg') center no-repeat;
 			}
 		}
 
 		.download-do { //ajustado
-			background: url('/assets/icon-download.svg') center no-repeat;
+			background: url('../assets/icon-download.svg') center no-repeat;
 			&:hover {
-				background: url('/assets/icon-download-hover.svg') center
+				background: url('../assets/icon-download-hover.svg') center
 					no-repeat;
 			}
 		}
 
 		.enlarge-do { //Ajustado
-			background: url('/assets/icon-max-normal.svg') center no-repeat;
+			background: url('../assets/icon-max-normal.svg') center no-repeat;
 			&:hover {
-				background: url('/assets/icon-max-hover.svg') center no-repeat;
+				background: url('../assets/icon-max-hover.svg') center no-repeat;
 			}
 		}
 
 		.remove-do { //Ajustado
-			background: url('/assets/icon-trash-normal.svg') center no-repeat;
+			background: url('../assets/icon-trash-normal.svg') center no-repeat;
 			&:hover {
-				background: url('/assets/icon-trash-hover.svg') center no-repeat;
+				background: url('../assets/icon-trash-hover.svg') center no-repeat;
 			}
 		}
 
@@ -151,10 +151,10 @@
 	margin-right: 2rem;
 	align-self: flex-end;
 	cursor: pointer;
-	background: url('/assets/close.svg') center no-repeat;
+	background: url('../assets/close.svg') center no-repeat;
 
 	body.darkMode & {
-		background: url('/assets/close-modo-noct.svg') center no-repeat;
+		background: url('../assets/close-modo-noct.svg') center no-repeat;
 	}
 
 }
@@ -212,26 +212,26 @@
 
 
 .largegif-favs { //ajustado
-	background: url('/assets/icon-fav.svg') center no-repeat;
+	background: url('../assets/icon-fav.svg') center no-repeat;
 	&:hover {
-		background: url('/assets/icon-fav-hover.svg') center no-repeat;
+		background: url('../assets/icon-fav-hover.svg') center no-repeat;
 	}
 	&:active {
-		background: url('/assets/icon-fav-active.svg') center no-repeat;
+		background: url('../assets/icon-fav-active.svg') center no-repeat;
 	}
 }
 
 .largegif-download { //ajustado
-	background: url('/assets/icon-download.svg') center no-repeat;
+	background: url('../assets/icon-download.svg') center no-repeat;
 	&:hover {
-		background: url('/assets/icon-download-hover.svg') center no-repeat;
+		background: url('../assets/icon-download-hover.svg') center no-repeat;
 	}
 }
 
 .largegif-remove { //ajustado
-	background: url('/assets/icon-trash-normal.svg') center no-repeat;
+	background: url('../assets/icon-trash-normal.svg') center no-repeat;
 	&:hover {
-		background: url('/assets/icon-trash-hover.svg') center no-repeat;
+		background: url('../assets/icon-trash-hover.svg') center no-repeat;
 	}
 }
 
@@ -241,19 +241,19 @@
 //Estilos new gif grabar
 
 .cover-download { //ajustado
-	background: url('/assets/icon-download.svg') center no-repeat;
+	background: url('../assets/icon-download.svg') center no-repeat;
 
 	&:hover {
-		background: url('/assets/icon-download-hover.svg') center
+		background: url('../assets/icon-download-hover.svg') center
 			no-repeat;
 	}
 }
 
 .cover-link { //ajustado
-	background: url('/assets/icon-link-normal.svg') center no-repeat;
+	background: url('../assets/icon-link-normal.svg') center no-repeat;
 
 	&:hover {
-		background: url('/assets/icon-link-hover.svg') center no-repeat;
+		background: url('../assets/icon-link-hover.svg') center no-repeat;
 	}	
 }
 
