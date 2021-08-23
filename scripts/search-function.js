@@ -38,15 +38,15 @@ const showSearchGif = (results) => {
 
 	for (let i = 0; i < results.data.length; i++) {
 		const gifCnt = document.createElement('div');
+		const title = results.data[i].title.replace("'", "´") 
 		gifCnt.classList.add('gif-cnt');
 		gifCnt.innerHTML = ` 
-		<img class="gif-img" onclick="enlargeGif('${results.data[i].images.original.url}','${results.data[i].username}','${results.data[i].title}')" src="${results.data[i].images.original.url}" alt="${results.data[i].title}">
-	
+		<img class="gif-img" onclick="enlargeGif('${results.data[i].images.original.url}','${results.data[i].username}','${title}')" src="${results.data[i].images.original.url}" alt="${results.data[i].title}">
 		<div class="gif-doing">
 			<div class="gif-doing-btn">
-				<div class="dobtn fav-do" onclick="addFavsGif('${results.data[i].images.original.url}','${results.data[i].username}','${results.data[i].title}')"></div>
-				<div class="dobtn download-do" onclick="downloadGif('${results.data[i].images.original.url}','${results.data[i].title}')"></div>
-				<div class="dobtn enlarge-do" onclick="enlargeGif('${results.data[i].images.original.url}','${results.data[i].username}','${results.data[i].title}')"></div>
+				<div class="dobtn fav-do" onclick="addFavsGif('${results.data[i].images.original.url}','${results.data[i].username}','${title}')"></div>
+				<div class="dobtn download-do" onclick="downloadGif('${results.data[i].images.original.url}','${title}')"></div>
+				<div class="dobtn enlarge-do" onclick="enlargeGif('${results.data[i].images.original.url}','${results.data[i].username}','${title}')"></div>
 			</div>
 			<div class="gif-data">
 				<p class="gif-data-user">${results.data[i].username}</p>

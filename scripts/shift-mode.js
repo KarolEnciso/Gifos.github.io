@@ -9,7 +9,7 @@ const shiftMode = () => {
 		menuNewgiftBtn.src = "./assets/CTA-crear-gifo-modo-noc.svg";
 		menuBurger.src = "./assets/burger-modo-noct.svg";
 		navbarIcon.src = "./assets/icon-search-modo-noct.svg";
-		navbarClose.src = "./assets/close-modo-noc.svg";
+		navbarClose.src = "./assets/close-modo-noct.svg";
 		searchIcon.src = "./assets/icon-search-modo-noct.svg";
 		searchClose.src = "./assets/close-modo-noct.svg"; 
 		leftBtn.src = "./assets/button-slider-left-md-noct.svg";
